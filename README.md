@@ -19,6 +19,8 @@ Libraries needed:
   * sys
   * json
 
+Before running the program, edit DIR to the current location in header.py
+
 To run program:
 
     python mindMap.py
