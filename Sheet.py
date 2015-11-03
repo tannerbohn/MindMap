@@ -2,8 +2,6 @@ from header import *
 
 from Thought import *
 
-from Sidebar import *
-
 from Link import *
 
 from ColourScheme import *
@@ -62,8 +60,6 @@ class Sheet:
 
 		self.loadFile()
 
-		#self.sidebar._lift()
-
 	def initDrawing(self):
 		global DIR
 		# draw the save button
@@ -71,9 +67,6 @@ class Sheet:
 		self.saveIcon, self.imageList = g.loadImage(fileName=DIR+"/icons/save.png", size=(20,20),
 				imageList=self.imageList, root=self.root, background=g.toHex(self.cs.background))
 		self.saveIcon.bind("<Button-1>", self.handleSavePress)
-
-		# create sidebar
-		#self.sidebar = Sidebar(self.root)
 
 
 		return
@@ -320,8 +313,6 @@ class Sheet:
 		self.canvas.place(x=0, y=0, width=canvasW, height=canvasH)
 
 		self.saveIcon.place(x=0, y=pixelY-30, width=30, height=30)
-
-		#self.sidebar.resize()
 
 	def addThought(self, coords, data={}):
 
