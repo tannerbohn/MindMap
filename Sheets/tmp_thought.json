@@ -1,0 +1,318 @@
+{
+    "links": [
+        {
+            "importance": 0, 
+            "tB": 1, 
+            "tA": 3
+        }, 
+        {
+            "importance": 1, 
+            "tB": 6, 
+            "tA": 5
+        }, 
+        {
+            "importance": 1, 
+            "tB": 7, 
+            "tA": 6
+        }, 
+        {
+            "importance": 1, 
+            "tB": 8, 
+            "tA": 5
+        }, 
+        {
+            "importance": 1, 
+            "tB": 9, 
+            "tA": 5
+        }, 
+        {
+            "importance": 1, 
+            "tB": 9, 
+            "tA": 8
+        }, 
+        {
+            "importance": 1, 
+            "tB": 10, 
+            "tA": 5
+        }, 
+        {
+            "importance": 1, 
+            "tB": 11, 
+            "tA": 10
+        }, 
+        {
+            "importance": 1, 
+            "tB": 12, 
+            "tA": 10
+        }, 
+        {
+            "importance": 1, 
+            "tB": 14, 
+            "tA": 13
+        }, 
+        {
+            "importance": 1, 
+            "tB": 15, 
+            "tA": 5
+        }, 
+        {
+            "importance": 1, 
+            "tB": 19, 
+            "tA": 13
+        }, 
+        {
+            "importance": 1, 
+            "tB": 3, 
+            "tA": 13
+        }, 
+        {
+            "importance": 1, 
+            "tB": 1, 
+            "tA": 13
+        }, 
+        {
+            "importance": 1, 
+            "tB": 16, 
+            "tA": 13
+        }, 
+        {
+            "importance": 1, 
+            "tB": 21, 
+            "tA": 20
+        }, 
+        {
+            "importance": 1, 
+            "tB": 23, 
+            "tA": 2
+        }
+    ], 
+    "thoughts": [
+        {
+            "text": "add \"notes\", which are just small labels", 
+            "fontSize": 10, 
+            "radius": 60.58985905294665, 
+            "pixLoc": [
+                396.79168951256145, 
+                783.8474364403545
+            ]
+        }, 
+        {
+            "text": "Time tags: closer -> brighter? #b4", 
+            "fontSize": 12, 
+            "radius": 67.52499489587565, 
+            "pixLoc": [
+                -57.19833699020301, 
+                789.0862210333239
+            ]
+        }, 
+        {
+            "text": "better support for *lists*", 
+            "fontSize": 12, 
+            "radius": 55.50097872157123, 
+            "pixLoc": [
+                567.6716830566729, 
+                856.1112899864439
+            ]
+        }, 
+        {
+            "text": "password protection and encryption?", 
+            "fontSize": 12, 
+            "radius": 68.41883772254597, 
+            "pixLoc": [
+                -381.1160305058243, 
+                278.53006887707863
+            ]
+        }, 
+        {
+            "text": "incorporate more programs into mindmap #b#B#s", 
+            "fontSize": 16, 
+            "radius": 108.95183982419493, 
+            "pixLoc": [
+                -97.2469322463802, 
+                497.5113578903962
+            ]
+        }, 
+        {
+            "text": "knowledgeTool?", 
+            "fontSize": 15, 
+            "radius": 56.984253201407974, 
+            "pixLoc": [
+                -130.42319903406454, 
+                246.1705293217927
+            ]
+        }, 
+        {
+            "text": "word web", 
+            "fontSize": 17, 
+            "radius": 50.99785348059958, 
+            "pixLoc": [
+                -188.0473115809396, 
+                93.39962629054251
+            ]
+        }, 
+        {
+            "text": "quick reader", 
+            "fontSize": 12, 
+            "radius": 50.0, 
+            "pixLoc": [
+                26.3679909190566, 
+                331.93665032179365
+            ]
+        }, 
+        {
+            "text": "memory helper", 
+            "fontSize": 12, 
+            "radius": 50.0, 
+            "pixLoc": [
+                185.83937215343283, 
+                388.2206672280396
+            ]
+        }, 
+        {
+            "text": "Fermi", 
+            "fontSize": 18, 
+            "radius": 50.0, 
+            "pixLoc": [
+                145.35529652843195, 
+                562.820367415541
+            ]
+        }, 
+        {
+            "text": "question answering", 
+            "fontSize": 12, 
+            "radius": 50.847727214752496, 
+            "pixLoc": [
+                396.63638452580585, 
+                598.3592982825497
+            ]
+        }, 
+        {
+            "text": "command parsing algorithm", 
+            "fontSize": 12, 
+            "radius": 58.8, 
+            "pixLoc": [
+                238.96451984092494, 
+                715.8651521186665
+            ]
+        }, 
+        {
+            "text": "optimize for note taking?\n#r3", 
+            "fontSize": 12, 
+            "radius": 68.0584167517958, 
+            "pixLoc": [
+                702.387645033734, 
+                660.9524917944108
+            ]
+        }, 
+        {
+            "text": "studying?", 
+            "fontSize": 12, 
+            "radius": 50.0, 
+            "pixLoc": [
+                866.1155130038095, 
+                760.5341359760301
+            ]
+        }, 
+        {
+            "text": "playlists\n#r3", 
+            "fontSize": 12, 
+            "radius": 50.0, 
+            "pixLoc": [
+                -283.22970079417263, 
+                414.24574594600233
+            ]
+        }, 
+        {
+            "text": "edge labels? #r", 
+            "fontSize": 12, 
+            "radius": 50, 
+            "pixLoc": [
+                534.8571392257846, 
+                643.7393169370134
+            ]
+        }, 
+        {
+            "text": "*Facebook* #b2\n##[[google-chrome facebook.com]]", 
+            "fontSize": 13, 
+            "radius": 72.54094091621263, 
+            "pixLoc": [
+                490.69824280042025, 
+                127.11911408978833
+            ]
+        }, 
+        {
+            "text": "*YouTube* #r\n##[[google-chrome youtube.com]]", 
+            "fontSize": 12, 
+            "radius": 64.51246452893295, 
+            "pixLoc": [
+                603.9514222874866, 
+                254.74002101688137
+            ]
+        }, 
+        {
+            "text": "link to docs", 
+            "fontSize": 12, 
+            "radius": 50, 
+            "pixLoc": [
+                727.1430642910403, 
+                854.7711943458206
+            ]
+        }, 
+        {
+            "text": "Colour scheme/UI design #b\n##[[google-chrome http://www.fastcodesign.com/3052738/how-ui-ux-design-will-map-the-future-of-self-driving-cars?partner=rss#6]]", 
+            "fontSize": 12, 
+            "radius": 108.78466162422862, 
+            "pixLoc": [
+                63.795722181671294, 
+                1050.4251578770763
+            ]
+        }, 
+        {
+            "text": "Material Design\n##[[www.google.com/design/spec/style/color.html#color-color-palette]]", 
+            "fontSize": 15, 
+            "radius": 104.15506027152375, 
+            "pixLoc": [
+                366.8536758009615, 
+                1037.5983416085273
+            ]
+        }, 
+        {
+            "text": "right click option menu", 
+            "fontSize": 12, 
+            "radius": 56.65623099478355, 
+            "pixLoc": [
+                710.0891757739336, 
+                1068.805100298509
+            ]
+        }, 
+        {
+            "text": "<<Oct 29>>", 
+            "fontSize": 12, 
+            "radius": 50, 
+            "pixLoc": [
+                350.04163927825687, 
+                274.7937540867258
+            ]
+        }, 
+        {
+            "text": "<<5 pm Nov 1 2016>>\n#y #B", 
+            "fontSize": 12, 
+            "radius": 77.46623463397306, 
+            "pixLoc": [
+                564.3030474487907, 
+                455.8742281537147
+            ]
+        }, 
+        {
+            "text": "*Home*\n[[nautilus /home]]", 
+            "fontSize": 12, 
+            "radius": 60.41642380530676, 
+            "pixLoc": [
+                780.9999999999999, 
+                253.99999999999991
+            ]
+        }
+    ], 
+    "root_geometry": "1112x582+128+117", 
+    "zoom": 1.006833689425244
+}
