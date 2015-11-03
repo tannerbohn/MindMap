@@ -27,3 +27,7 @@ To run wrapper:
 
     python wrapper.py
 
+The best thing to do once everything runs is run wrapper and open the help sheet.
+
+To create your own sheet, run wrapper and click the '+' tile. A file will be created when you save.
+
