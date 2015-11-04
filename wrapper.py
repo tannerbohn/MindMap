@@ -32,7 +32,7 @@ def addLeave(event=[], stage=0):
 		textColour = g.shadeN([g.darkText, g.lightText], [0,1], f)
 
 
-		fontColour = g.shadeN([bgColour, textColour], [0,1], 0.87)
+		fontColour = g.shadeN([bgColour, textColour], [0,1], cs.fontOpacity)
 
 		tk_text.configure(fg=g.toHex(fontColour), bg=g.toHex(bgColour))#g.toHex(textColour))
 
@@ -61,7 +61,7 @@ def addFile(event=[]):
 	tk_text.place(x=addLabelGeom[0], y=addLabelGeom[1],
 				width=addLabelGeom[2], height=addLabelGeom[3])
 
-	fontColour = g.toHex(g.shadeN([(1,1,1), cs.darkText], [0,1], 0.87))
+	fontColour = g.toHex(g.shadeN([(1,1,1), cs.darkText], [0,1], cs.fontOpacity))
 
 	tk_text.configure(font=(g.mainFont, fontSize, "normal"), fg=fontColour, bg="white")
 
@@ -109,7 +109,7 @@ def sheetRightClick(sheet, event=[]):
 
 def labelEnter(sheet, event=[]):
 
-	sheet.configure(bg="white", fg=g.toHex(g.shadeN([(1,1,1),cs.darkText],[0,1],0.87)))
+	sheet.configure(bg="white", fg=g.toHex(g.shadeN([(1,1,1),cs.darkText],[0,1],cs.fontOpacity)))
 
 def labelLeave(sheet, event=[]):
 	#sheet.configure(bg=g.toHex(cs.background), fg="white")
@@ -125,8 +125,8 @@ def pulse(sheet, stage=0):
 
 		f = 1.0*stage/total_stages
 		
-		lightFontColour = g.shadeN([cs.background, cs.lightText], [0,1], 0.87)
-		darkFontColour = g.shadeN([(1,1,1), cs.darkText], [0,1], 0.87)
+		lightFontColour = g.shadeN([cs.background, cs.lightText], [0,1], cs.fontOpacity)
+		darkFontColour = g.shadeN([(1,1,1), cs.darkText], [0,1], cs.fontOpacity)
 
 		if stage<=total_stages:
 			sheetColour = g.shadeN([(1,1,1), cs.background], [0,1], f)
@@ -214,7 +214,7 @@ def initPages():
 	global tk_sheets
 
 
-	fontColour = g.toHex(g.shadeN([cs.background, cs.lightText], [0,1], 0.87))
+	fontColour = g.toHex(g.shadeN([cs.background, cs.lightText], [0,1], cs.fontOpacity))
 
 	for s in tk_sheets:
 		s.destroy()
@@ -263,7 +263,7 @@ if __name__ == "__main__":
 	#sheets.append({'filename':'', 'name':'+', 'special':True})
 
 	tk_sheets=[]
-	fontColour = g.toHex(g.shadeN([cs.background, cs.lightText], [0,1], 0.87))
+	fontColour = g.toHex(g.shadeN([cs.background, cs.lightText], [0,1], cs.fontOpacity))
 	for s in sheets:
 		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 		s_box.bind('<Button-1>', lambda event, filename=s['filename']: sheetClick(filename, event))

@@ -744,12 +744,12 @@ class Thought:
 			#print "light background"
 
 			# 87% opacity for important black text on coloured background
-			textColour=g.shadeN([self.colour, self.cs.darkText], [0, 1], 0.87)
+			textColour=g.shadeN([self.colour, self.cs.darkText], [0, 1], cs.fontOpacity)
 		else:
 			#print "dark background"
 			#textColour=self.cs.lightText
 
-			textColour=g.shadeN([self.colour, self.cs.lightText], [0, 1], 0.87)
+			textColour=g.shadeN([self.colour, self.cs.lightText], [0, 1], cs.fontOpacity)
 		
 		#if textColour != self.textColour:
 		self.textColour=textColour

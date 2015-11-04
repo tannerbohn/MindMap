@@ -5,8 +5,10 @@ sys.path.insert(0, DIR+'/GraphicsTools/')
 import graphicsTools as g
 
 class ColourScheme:
+	fontOpacity = 0.87
 
 	def __init__(self, cs_name=6):
+
 
 		self.darkGrey=(0.2,0.2,0.2)
 		self.lightGrey=(0.8,0.8,0.8)
@@ -248,6 +250,8 @@ class ColourScheme:
 
 			self.lightText=self.white
 			self.darkText=self.black
+
+
 
 
 			self.link = self.grey4
