@@ -11,8 +11,8 @@ from header import DIR
 sys.path.insert(0, DIR+'/GraphicsTools/')
 import graphicsTools as g
 
+from ColourScheme import *
 
-bkgColour = tuple([i/255.0 for i in [22, 28, 36]])
 
 addLabelGeom=[0,0,0,0,0]
 
@@ -20,7 +20,6 @@ def addEnter(event=[]):
 	return
 
 def addLeave(event=[], stage=0):
-	global bkgColour
 
 	#try:
 
@@ -29,11 +28,13 @@ def addLeave(event=[], stage=0):
 	f = 1.0*stage/total_stages
 	
 	if stage<=total_stages:
-		bgColour = g.shadeN([(1.0,1.0,1.0), bkgColour], [0,1], f)
-		textColour = g.shadeN([(0,0,0), (1,1,1)], [0,1], f)
+		bgColour = g.shadeN([(1.0,1.0,1.0), cs.background], [0,1], f)
+		textColour = g.shadeN([g.darkText, g.lightText], [0,1], f)
 
 
-		tk_text.configure(fg=g.toHex(textColour), bg=g.toHex(bgColour))#g.toHex(textColour))
+		fontColour = g.shadeN([bgColour, textColour], [0,1], 0.87)
+
+		tk_text.configure(fg=g.toHex(fontColour), bg=g.toHex(bgColour))#g.toHex(textColour))
 
 
 	if stage < total_stages:
@@ -45,7 +46,7 @@ def addLeave(event=[], stage=0):
 		tk_root.focus()
 
 def addFile(event=[]):
-	global sheets, addLabelGeom, tk_text, bkgColour
+	global sheets, addLabelGeom, tk_text
 
 	pixelX=tk_root.winfo_width()
 	pixelY=tk_root.winfo_height()
@@ -60,7 +61,9 @@ def addFile(event=[]):
 	tk_text.place(x=addLabelGeom[0], y=addLabelGeom[1],
 				width=addLabelGeom[2], height=addLabelGeom[3])
 
-	tk_text.configure(font=(g.mainFont, fontSize, "normal"), fg="black", bg="white")
+	fontColour = g.toHex(g.shadeN([(1,1,1), cs.darkText], [0,1], 0.87))
+
+	tk_text.configure(font=(g.mainFont, fontSize, "normal"), fg=fontColour, bg="white")
 
 
 	tk_root.update()
@@ -105,16 +108,16 @@ def sheetRightClick(sheet, event=[]):
 	
 
 def labelEnter(sheet, event=[]):
-	sheet.configure(bg="white", fg="black")
+
+	sheet.configure(bg="white", fg=g.toHex(g.shadeN([(1,1,1),cs.darkText],[0,1],0.87)))
 
 def labelLeave(sheet, event=[]):
-	#sheet.configure(bg=g.toHex(bkgColour), fg="white")
+	#sheet.configure(bg=g.toHex(cs.background), fg="white")
 
 	pulse(sheet, stage=0)
 
 
 def pulse(sheet, stage=0):
-	global bkgColour
 
 	try:
 
@@ -122,9 +125,15 @@ def pulse(sheet, stage=0):
 
 		f = 1.0*stage/total_stages
 		
+		lightFontColour = g.shadeN([cs.background, cs.lightText], [0,1], 0.87)
+		darkFontColour = g.shadeN([(1,1,1), cs.darkText], [0,1], 0.87)
+
 		if stage<=total_stages:
-			sheetColour = g.shadeN([(1.0,1.0,1.0), bkgColour], [0,1], f)
-			textColour = g.shadeN([(0,0,0), (1,1,1)], [0,1], f)
+			sheetColour = g.shadeN([(1,1,1), cs.background], [0,1], f)
+
+			
+
+			textColour = g.shadeN([darkFontColour, lightFontColour], [0,1], f)
 
 
 			sheet.configure(bg=g.toHex(sheetColour), fg=g.toHex(textColour))
@@ -189,20 +198,23 @@ def resizeLayout(event=[]):
 
 
 def graphicsInit():
-	global bkgColour
+	global cs
 
 	tk_root.title("MindMap Wrapper")
 	tk_root.geometry("%dx%d%+d%+d" % (g.WIDTH/2, g.HEIGHT/2, g.WIDTH/4, g.HEIGHT/4))
 	
 
 	
-	tk_root.config(bg=g.toHex(bkgColour))
+	tk_root.config(bg=g.toHex(cs.background))
 
 	#tk_canvas.config(bg="black")
 
 
 def initPages():
 	global tk_sheets
+
+
+	fontColour = g.toHex(g.shadeN([cs.background, cs.lightText], [0,1], 0.87))
 
 	for s in tk_sheets:
 		s.destroy()
@@ -212,7 +224,7 @@ def initPages():
 	sheets = getFileList()
 
 	for s in sheets:
-		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(bkgColour), fg="white", cursor='hand1', anchor=CENTER)
+		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 		s_box.bind('<Button-1>', lambda event, filename=s['filename']: sheetClick(filename, event))
 		s_box.bind('<Button-3>', lambda event, sheet=s: sheetRightClick(sheet, event))
 
@@ -221,7 +233,7 @@ def initPages():
 		
 		tk_sheets.append(s_box)
 
-	s_box_plus = Label(tk_root, text='+', font=g.FONT, bg=g.toHex(bkgColour), fg="white", cursor='hand1', anchor=CENTER)
+	s_box_plus = Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 	s_box_plus.bind('<Button-1>', addFile)
 	s_box_plus.bind('<Enter>', lambda event, sheet=s_box_plus: labelEnter(sheet, event))
 	s_box_plus.bind('<Leave>', lambda event, sheet=s_box_plus: labelLeave(sheet, event))
@@ -232,6 +244,8 @@ def initPages():
 
 if __name__ == "__main__":
 	
+	cs = ColourScheme()
+
 	tk_root = Tk()
 	#tk_canvas = Canvas(tk_root)
 
@@ -249,8 +263,9 @@ if __name__ == "__main__":
 	#sheets.append({'filename':'', 'name':'+', 'special':True})
 
 	tk_sheets=[]
+	fontColour = g.toHex(g.shadeN([cs.background, cs.lightText], [0,1], 0.87))
 	for s in sheets:
-		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(bkgColour), fg="white", cursor='hand1', anchor=CENTER)
+		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 		s_box.bind('<Button-1>', lambda event, filename=s['filename']: sheetClick(filename, event))
 		s_box.bind('<Button-3>', lambda event, sheet=s: sheetRightClick(sheet, event))
 
@@ -259,7 +274,7 @@ if __name__ == "__main__":
 		
 		tk_sheets.append(s_box)
 
-	s_box_plus = Label(tk_root, text='+', font=g.FONT, bg=g.toHex(bkgColour), fg="white", cursor='hand1', anchor=CENTER)
+	s_box_plus = Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 	s_box_plus.bind('<Button-1>', addFile)
 	s_box_plus.bind('<Enter>', lambda event, sheet=s_box_plus: labelEnter(sheet, event))
 	s_box_plus.bind('<Leave>', lambda event, sheet=s_box_plus: labelLeave(sheet, event))
