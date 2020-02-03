@@ -1,7 +1,7 @@
 # MindMap
 Mind mapping program written in Python with Tkinter
 
-Getting Python 3 Compatibile. 
+Getting Python 3 Compatibile. Still gotta resolve some os issues 
 
    Because who doesn't love mind maps? 
 
