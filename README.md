@@ -1,25 +1,10 @@
 # MindMap
 Mind mapping program written in Python with Tkinter
 
-Python version used: 2.7
+Getting Python 3 Compatibile. 
 
-OS used: x86_64 GNU/Linux
+   Because who doesn't love mind maps? 
 
-Libraries needed:
-  * Tkinter
-  * tkMessageBox
-  * PIL
-  * threading
-  * subprocess
-  * ImageTk
-  * random
-  * time
-  * datetime
-  * parsedatetime
-  * sys
-  * json
-
-Before running the program, edit DIR to the current location in header.py
 
 To run program:
 
