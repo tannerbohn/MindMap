@@ -1,7 +1,12 @@
-from header import *
+import graphicsTools as g
+import tkinter as tk
+import calculations as calc
+import math
 import subprocess
 import time
 import timeOperations as timeOps
+import threading
+import tkinter as tk
 
 class Thought:
 
@@ -186,11 +191,11 @@ class Thought:
 		now create and draw text box
 		'''
 		if init:
-			self.tk_text = Text(self.root, bd=0, highlightthickness=0, wrap="word",
+			self.tk_text = tk.Text(self.root, bd=0, highlightthickness=0, wrap="word",
 					font=(g.mainFont, int(self.z_labelFontSize), "normal"),
 					bg=g.toHex(self.colour), fg=g.toHex(self.cs.lightText))
 
-			self.tk_text.insert(END, self.text) # set initial text
+			self.tk_text.insert(tk.END, self.text) # set initial text
 			self.tk_text.tag_configure("center", justify='center')
 			self.tk_text.tag_add("center", 1.0, "end")
 
@@ -524,9 +529,9 @@ class Thought:
 
 		self.cursorPos = (event.x, event.y)
 
-		initDistance = dist(self.dragInit, self.pixLoc)
+		initDistance = calc.dist(self.dragInit, self.pixLoc)
 
-		curDistance = dist(self.cursorPos, self.pixLoc)
+		curDistance = calc.dist(self.cursorPos, self.pixLoc)
 
 		deltaDist = 1.0*curDistance / initDistance
 
@@ -580,7 +585,7 @@ class Thought:
 					data = {'text': output, 'radius':max(self.z_r*0.5, 15), 'fontSize':self.z_fontSize}
 					self.parentSheet.addThought(coords=newLoc, data=data)
 			except:
-				print "Command failed: ", cmdStr
+				print("Command failed: ", cmdStr)
 				pass
 
 	def linkAdd(self, importance=1):
@@ -609,9 +614,9 @@ class Thought:
 			self.parentSheet.addLink()
 
 
-	def moveByPix(self, (x,y)):
+	def moveByPix(self, x):
 
-		newX, newY = self.pixLoc[0] + x, self.pixLoc[1]+y
+		newX, newY = self.pixLoc[0] + x[0], self.pixLoc[1]+x[1]
 
 		pixelX=self.root.winfo_width()
 		pixelY=self.root.winfo_height()
@@ -622,17 +627,17 @@ class Thought:
 
 		self.parentSheet.updateNodeEdges(self)
 
-	def moveBy(self, (x, y)):
-		newX = self.loc[0]+x #max(min(self.loc[0]+x, 1), 0)
-		newY = self.loc[1]+y #max(min(self.loc[1]+y, 1), 0)
+	def moveBy(self, x):
+		newX = self.loc[0]+x[0] #max(min(self.loc[0]+x, 1), 0)
+		newY = self.loc[1]+x[1] #max(min(self.loc[1]+y, 1), 0)
 		
 		self.loc = (newX, newY)
 
 		self.reDraw()
 
-	def moveTo(self, (x, y)):
+	def moveTo(self, x):
 		# must provide normalized coords (0-1)
-		self.moveBy((x - self.loc[0], y - self.loc[1]))
+		self.moveBy((x[0] - self.loc[0], x[1] - self.loc[1]))
 
 	def remove(self, event=[]):
 		
@@ -661,7 +666,7 @@ class Thought:
 
 
 	def getText(self):
-		text = self.tk_text.get("0.0",END)
+		text = self.tk_text.get("0.0",tk.END)
 		text = text.strip()
 		return text
 
@@ -739,7 +744,7 @@ class Thought:
 
 		# dynamically optimize text colour
 		textColour=self.textColour
-		lum = luminance(self.colour)
+		lum = calc.luminance(self.colour)
 		if lum >= 0.5:
 			#print "light background"
 
@@ -1032,7 +1037,7 @@ class Thought:
 			f = 1.0/self.parentSheet.zoomFac
 
 		#delta = getDir((pX/2, pY/2), self.pixLoc)
-		delta = getDir(location, self.pixLoc)
+		delta = calc.getDir(location, self.pixLoc)
 
 		delta2 = (delta[0]*f, delta[1]*f)
 

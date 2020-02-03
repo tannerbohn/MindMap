@@ -1,10 +1,13 @@
-from header import *
+import graphicsTools as g
+import calculations as calc
+import threading
+import fileIO
+from Thought import Thought
+from Link import Link
+import header as h
 
-from Thought import *
 
-from Link import *
-
-from ColourScheme import *
+import ColourScheme as cs
 
 class Sheet:
 
@@ -30,7 +33,7 @@ class Sheet:
 		self.root=root
 		self.canvas=canvas
 
-		self.cs=ColourScheme()
+		self.cs=cs.ColourScheme()
 
 		self.thoughts = []
 		self.links = []
@@ -61,10 +64,9 @@ class Sheet:
 		self.loadFile()
 
 	def initDrawing(self):
-		global DIR
 		# draw the save button
 		
-		self.saveIcon, self.imageList = g.loadImage(fileName=DIR+"/icons/save.png", size=(20,20),
+		self.saveIcon, self.imageList = g.loadImage(fileName=h.DIR+"/icons/save.png", size=(20,20),
 				imageList=self.imageList, root=self.root, background=g.toHex(self.cs.background))
 		self.saveIcon.bind("<Button-1>", self.handleSavePress)
 
@@ -114,7 +116,7 @@ class Sheet:
 
 
 	def loadFile(self):
-		data = jsonLoad(self.fileName)
+		data = fileIO.jsonLoad(self.fileName)
 		
 		if data == {}:
 			return
@@ -128,8 +130,8 @@ class Sheet:
 		
 		geomD = geom.replace('+', ' ').replace('x', ' ').split()
 		geomD = [int(d) for d in geomD]
-		geomD2 = [geomD[0], geomD[1], g.WIDTH/2 - geomD[0]/2, g.HEIGHT/2 - geomD[1]/2]
-		geom = '%sx%s+%s+%s'%tuple(geomD2)
+		geomD2 = (geomD[0], geomD[1], int(g.WIDTH/2 - geomD[0]/2), int(g.HEIGHT/2 - geomD[1]/2))
+		geom = '%sx%s+%s+%s'%geomD2
 		self.root.geometry(geom)
 
 		self.root.update()
@@ -189,7 +191,7 @@ class Sheet:
 			#l.grow()
 
 	
-		jsonSave(data=data, fileName=self.fileName, indent=True, sort=False, oneLine=False)
+		fileIO.jsonSave(data=data, fileName=self.fileName, indent=True, sort=False, oneLine=False)
 		
 
 		self.pulse()
@@ -254,9 +256,9 @@ class Sheet:
 
 					distance = max(self.nodeDist(node, t),0.1)
 
-					direction = getDir(node.pixLoc, t.pixLoc)
+					direction = calc.getDir(node.pixLoc, t.pixLoc)
 
-					cs = cosSim(normalize(delta), direction)
+					cs = calc.cosSim(calc.normalize(delta), direction)
 
 					d2 = max(distance - (node.z_r+t.z_r)*1.25, 1.0)
 					
@@ -276,15 +278,15 @@ class Sheet:
 
 					distance = max(self.nodeDist(node, t),0.1)/self.curZoom
 
-					direction = getDir(node.pixLoc, t.pixLoc)
+					direction = calc.getDir(node.pixLoc, t.pixLoc)
 
-					cs = cosSim(normalize(delta), direction)
+					cs = calc.cosSim(calc.normalize(delta), direction)
 
 					d2 = max(distance - (node.r+t.r)*1.25, 1.0)
 					
 					if cs>=0.3 and d2<100:
 
-						damp=1.0 - clamp(d2/400.0)
+						damp=1.0 - calc.clamp(d2/400.0)
 						delta2 = [v*damp for v in list(delta)]
 
 						t.moveBy(delta2)
@@ -297,7 +299,7 @@ class Sheet:
 
 
 	def nodeDist(self, tA, tB):
-		return dist(tA.pixLoc, tB.pixLoc)
+		return calc.dist(tA.pixLoc, tB.pixLoc)
 
 	def resetGroupShift(self):
 		for t in self.thoughts:
@@ -371,7 +373,7 @@ class Sheet:
 		tB = self.linkB
 
 		if tA == -1 or tB == -1:
-			print "ERROR: a link end not assigned"
+			print("ERROR: a link end not assigned")
 
 		if tA != tB and not self.hasLink(tA, tB):
 			self.links.append(Link(self, self.getThought(tA), self.getThought(tB), importance=self.linkImportance))

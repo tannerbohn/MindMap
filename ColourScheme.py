@@ -1,15 +1,14 @@
 import sys
-
-from header import DIR
-sys.path.insert(0, DIR+'/GraphicsTools/')
 import graphicsTools as g
+from header import DIR
+
+sys.path.insert(0, DIR+'/GraphicsTools/')
+
 
 class ColourScheme:
 	fontOpacity = 0.87
 
 	def __init__(self, cs_name=6):
-
-
 		self.darkGrey=(0.2,0.2,0.2)
 		self.lightGrey=(0.8,0.8,0.8)
 
