@@ -1,2 +1,2 @@
-/home/tanner/Dropbox/sandbox/MindMap/Sheets/help.json
-/home/tanner/Dropbox/sandbox/MindMap/Sheets/tmp_thought.json
+some sheet
+some other sheet
