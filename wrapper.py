@@ -1,10 +1,10 @@
-from Tkinter import *
-
+import tkinter as tk
+import sys
 import subprocess
 import math
 import threading
 import time
-import tkMessageBox
+
 
 from header import DIR
 
@@ -79,7 +79,7 @@ def sheetClick(filename, event=[]):
 		filename = filename+'.json'
 		filename = DIR+'/Sheets/'+filename
 
-	print filename
+	print(filename)
 
 	cmd = 'python '+DIR+'/mindmap.py '+filename
 
@@ -91,12 +91,12 @@ def sheetRightClick(sheet, event=[]):
 	
 	
 
-	deleteSheet = tkMessageBox.askyesno("Deletion Confirmation",
+	deleteSheet = tk.messagebox.askyesno("Deletion Confirmation",
 		"Would you like to delete the page "+sheet['name']+'?')
 
 	if deleteSheet:
 		filename = sheet['filename']
-		print "deleting ", filename
+		print("deleting ", filename)
 
 
 		cmd = 'rm '+filename
@@ -224,7 +224,7 @@ def initPages():
 	sheets = getFileList()
 
 	for s in sheets:
-		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
+		s_box = tk.Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 		s_box.bind('<Button-1>', lambda event, filename=s['filename']: sheetClick(filename, event))
 		s_box.bind('<Button-3>', lambda event, sheet=s: sheetRightClick(sheet, event))
 
@@ -233,7 +233,7 @@ def initPages():
 		
 		tk_sheets.append(s_box)
 
-	s_box_plus = Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
+	s_box_plus = tk.Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 	s_box_plus.bind('<Button-1>', addFile)
 	s_box_plus.bind('<Enter>', lambda event, sheet=s_box_plus: labelEnter(sheet, event))
 	s_box_plus.bind('<Leave>', lambda event, sheet=s_box_plus: labelLeave(sheet, event))
@@ -265,7 +265,7 @@ if __name__ == "__main__":
 	tk_sheets=[]
 	fontColour = g.toHex(g.shadeN([cs.background, cs.lightText], [0,1], cs.fontOpacity))
 	for s in sheets:
-		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
+		s_box = tk.Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 		s_box.bind('<Button-1>', lambda event, filename=s['filename']: sheetClick(filename, event))
 		s_box.bind('<Button-3>', lambda event, sheet=s: sheetRightClick(sheet, event))
 
@@ -274,14 +274,14 @@ if __name__ == "__main__":
 		
 		tk_sheets.append(s_box)
 
-	s_box_plus = Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
+	s_box_plus = tk.Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 	s_box_plus.bind('<Button-1>', addFile)
 	s_box_plus.bind('<Enter>', lambda event, sheet=s_box_plus: labelEnter(sheet, event))
 	s_box_plus.bind('<Leave>', lambda event, sheet=s_box_plus: labelLeave(sheet, event))
 	
 	tk_sheets.append(s_box_plus)
 
-	tk_text = Text(tk_root)
+	tk_text = tk.Text(tk_root)
 	tk_text.configure(bd=0, highlightthickness=0)
 	tk_text.bind('<Return>', lambda event, filename='+': sheetClick(filename, event))
 	tk_text.bind('<Enter>', addEnter)
