@@ -10,7 +10,7 @@ import os
 
 from header import DIR
 
-sys.path.insert(0, DIR+'/GraphicsTools/')
+sys.path.insert(0, DIR+'\\GraphicsTools\\')
 import graphicsTools as g
 
 from ColourScheme import *
@@ -83,9 +83,9 @@ def sheetClick(filename, event=[]):
 
 	print(filename)
 
-	cmd = 'python '+DIR+'/mindmap.py '+filename
+	cmd = 'python '+DIR+'\\mindmap.py '+filename
 
-	subprocess.call(cmd+" >/dev/null 2>&1 &", shell=True)
+	subprocess.call(cmd, shell=True)
 
 	exit()
 

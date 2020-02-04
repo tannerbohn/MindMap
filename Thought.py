@@ -511,7 +511,7 @@ class Thought:
 		cur = (event.x, event.y)
 
 		# calculate dist form center to cur
-		d = dist(center, cur)/cz
+		d = calc.dist(center, cur)/cz
 
 		if d <= 10:
 			self.remove()
