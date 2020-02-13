@@ -1,327 +1,337 @@
 {
-    "links": [
-        {
-            "importance": 0, 
-            "tB": 1, 
-            "tA": 3
-        }, 
-        {
-            "importance": 1, 
-            "tB": 6, 
-            "tA": 5
-        }, 
-        {
-            "importance": 1, 
-            "tB": 7, 
-            "tA": 6
-        }, 
-        {
-            "importance": 1, 
-            "tB": 8, 
-            "tA": 5
-        }, 
-        {
-            "importance": 1, 
-            "tB": 9, 
-            "tA": 5
-        }, 
-        {
-            "importance": 1, 
-            "tB": 9, 
-            "tA": 8
-        }, 
-        {
-            "importance": 1, 
-            "tB": 10, 
-            "tA": 5
-        }, 
-        {
-            "importance": 1, 
-            "tB": 11, 
-            "tA": 10
-        }, 
-        {
-            "importance": 1, 
-            "tB": 12, 
-            "tA": 10
-        }, 
-        {
-            "importance": 1, 
-            "tB": 14, 
-            "tA": 13
-        }, 
-        {
-            "importance": 1, 
-            "tB": 15, 
-            "tA": 5
-        }, 
-        {
-            "importance": 1, 
-            "tB": 19, 
-            "tA": 13
-        }, 
-        {
-            "importance": 1, 
-            "tB": 3, 
-            "tA": 13
-        }, 
-        {
-            "importance": 1, 
-            "tB": 1, 
-            "tA": 13
-        }, 
-        {
-            "importance": 1, 
-            "tB": 16, 
-            "tA": 13
-        }, 
-        {
-            "importance": 1, 
-            "tB": 21, 
-            "tA": 20
-        }, 
-        {
-            "importance": 1, 
-            "tB": 23, 
-            "tA": 2
-        }
-    ], 
+    "root_geometry": "1920x1017+-8+-8",
     "thoughts": [
         {
-            "text": "add \"notes\", which are just small labels", 
-            "fontSize": 10, 
-            "radius": 60.58985905294665, 
             "pixLoc": [
-                950.9566869627221, 
-                479.18978770396603
-            ]
-        }, 
+                1115.956686962722,
+                588.189787703966
+            ],
+            "radius": 60.58985905294665,
+            "text": "add \"notes\", which are just small labels",
+            "fontSize": 10
+        },
         {
-            "text": "Time tags: closer -> brighter? #b4", 
-            "fontSize": 12, 
-            "radius": 67.52499489587565, 
             "pixLoc": [
-                612.1823392668882, 
-                483.0990494269026
-            ]
-        }, 
+                777.1823392668882,
+                592.0990494269026
+            ],
+            "radius": 67.52499489587565,
+            "text": "Time tags: closer -> brighter? #b4",
+            "fontSize": 12
+        },
         {
-            "text": "better support for *lists*", 
-            "fontSize": 12, 
-            "radius": 55.50097872157123, 
             "pixLoc": [
-                1078.469969122505, 
-                533.1141878403525
-            ]
-        }, 
+                1243.469969122505,
+                642.1141878403525
+            ],
+            "radius": 55.50097872157123,
+            "text": "better support for *lists*",
+            "fontSize": 12
+        },
         {
-            "text": "password protection and encryption?", 
-            "fontSize": 12, 
-            "radius": 68.41883772254597, 
             "pixLoc": [
-                370.46996912250756, 
-                102.11418784035988
-            ]
-        }, 
+                535.4699691225076,
+                211.11418784035988
+            ],
+            "radius": 68.41883772254597,
+            "text": "password protection and encryption?",
+            "fontSize": 12
+        },
         {
-            "text": "incorporate more programs into mindmap #b#B#s", 
-            "fontSize": 16, 
-            "radius": 108.95183982419493, 
             "pixLoc": [
-                582.2974608730606, 
-                265.5213972774326
-            ]
-        }, 
+                747.2974608730606,
+                368.5213972774326
+            ],
+            "radius": 108.95183982419493,
+            "text": "incorporate more programs into mindmap #b#B#s",
+            "fontSize": 16
+        },
         {
-            "text": "knowledgeTool?", 
-            "fontSize": 15, 
-            "radius": 56.984253201407974, 
             "pixLoc": [
-                557.5408197931661, 
-                77.96700119613365
-            ]
-        }, 
+                722.5408197931661,
+                186.96700119613365
+            ],
+            "radius": 56.984253201407974,
+            "text": "knowledgeTool?",
+            "fontSize": 15
+        },
         {
-            "text": "word web", 
-            "fontSize": 17, 
-            "radius": 50.99785348059958, 
             "pixLoc": [
-                514.5408197931656, 
-                -36.03299880386649
-            ]
-        }, 
+                679.5408197931656,
+                72.96700119613354
+            ],
+            "radius": 50.99785348059958,
+            "text": "word web",
+            "fontSize": 17
+        },
         {
-            "text": "quick reader", 
-            "fontSize": 12, 
-            "radius": 50.0, 
             "pixLoc": [
-                674.540819793163, 
-                141.96700119613425
-            ]
-        }, 
+                839.540819793163,
+                250.96700119613422
+            ],
+            "radius": 50.0,
+            "text": "quick reader",
+            "fontSize": 12
+        },
         {
-            "text": "memory helper", 
-            "fontSize": 12, 
-            "radius": 50.0, 
             "pixLoc": [
-                793.5408197931639, 
-                183.9670011961312
-            ]
-        }, 
+                958.5408197931639,
+                292.9670011961312
+            ],
+            "radius": 50.0,
+            "text": "memory helper",
+            "fontSize": 12
+        },
         {
-            "text": "Fermi", 
-            "fontSize": 18, 
-            "radius": 50.0, 
             "pixLoc": [
-                763.3309792431863, 
-                314.2559857241839
-            ]
-        }, 
+                928.3309792431863,
+                423.2559857241839
+            ],
+            "radius": 50.0,
+            "text": "Fermi",
+            "fontSize": 18
+        },
         {
-            "text": "question answering", 
-            "fontSize": 12, 
-            "radius": 50.847727214752496, 
             "pixLoc": [
-                950.8407959904307, 
-                340.7756831171506
-            ]
-        }, 
+                1115.840795990431,
+                449.7756831171506
+            ],
+            "radius": 50.847727214752496,
+            "text": "question answering",
+            "fontSize": 12
+        },
         {
-            "text": "command parsing algorithm", 
-            "fontSize": 12, 
-            "radius": 58.8, 
             "pixLoc": [
-                833.1836229461654, 
-                428.460360444594
-            ]
-        }, 
+                998.1836229461651,
+                537.460360444594
+            ],
+            "radius": 58.8,
+            "text": "command parsing algorithm",
+            "fontSize": 12
+        },
         {
-            "text": "optimize for note taking?\n#r3", 
-            "fontSize": 12, 
-            "radius": 68.0584167517958, 
             "pixLoc": [
-                1178.997094122502, 
-                387.4836878403572
-            ]
-        }, 
+                1343.997094122502,
+                496.4836878403572
+            ],
+            "radius": 68.0584167517958,
+            "text": "optimize for note taking?\n#r3",
+            "fontSize": 12
+        },
         {
-            "text": "studying?", 
-            "fontSize": 12, 
-            "radius": 50.0, 
             "pixLoc": [
-                1301.173350060262, 
-                461.7930439510718
-            ]
-        }, 
+                1466.173350060262,
+                570.7930439510718
+            ],
+            "radius": 50.0,
+            "text": "studying?",
+            "fontSize": 12
+        },
         {
-            "text": "playlists\n#r3", 
-            "fontSize": 12, 
-            "radius": 50.0, 
             "pixLoc": [
-                443.51425547359133, 
-                203.38731563415513
-            ]
-        }, 
+                608.5142554735912,
+                312.38731563415513
+            ],
+            "radius": 50.0,
+            "text": "playlists\n#r3",
+            "fontSize": 12
+        },
         {
-            "text": "edge labels? #r", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                1053.983251282289, 
-                374.63895173676883
-            ]
-        }, 
+                1218.983251282289,
+                483.63895173676883
+            ],
+            "radius": 50,
+            "text": "edge labels? #r",
+            "fontSize": 12
+        },
         {
-            "text": "*Facebook* #b2\n##[[google-chrome facebook.com]]", 
-            "fontSize": 13, 
-            "radius": 72.54094091621263, 
             "pixLoc": [
-                1021.0312028712003, 
-                -10.870997841368364
-            ]
-        }, 
+                1186.0312028712003,
+                98.12900215863164
+            ],
+            "radius": 72.54094091621263,
+            "text": "*Facebook* #b2\n##[[google-chrome facebook.com]]",
+            "fontSize": 13
+        },
         {
-            "text": "*YouTube* #r\n##[[google-chrome youtube.com]]", 
-            "fontSize": 12, 
-            "radius": 64.51246452893295, 
             "pixLoc": [
-                1105.5424691225003, 
-                84.36168784035854
-            ]
-        }, 
+                1270.5424691225003,
+                193.3616878403585
+            ],
+            "radius": 64.51246452893295,
+            "text": "*YouTube* #r\n##[[google-chrome youtube.com]]",
+            "fontSize": 12
+        },
         {
-            "text": "link to docs", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                1197.4699691225, 
-                532.1141878403532
-            ]
-        }, 
+                1362.4699691225,
+                641.1141878403532
+            ],
+            "radius": 50,
+            "text": "link to docs",
+            "fontSize": 12
+        },
         {
-            "text": "Colour scheme/UI design #b\n##[[google-chrome http://www.fastcodesign.com/3052738/how-ui-ux-design-will-map-the-future-of-self-driving-cars?partner=rss#6]]", 
-            "fontSize": 12, 
-            "radius": 108.78466162422862, 
             "pixLoc": [
-                702.4699691225044, 
-                678.1141878403578
-            ]
-        }, 
+                867.4699691225044,
+                787.1141878403578
+            ],
+            "radius": 108.78466162422862,
+            "text": "Colour scheme/UI design #b\n##[[google-chrome http://www.fastcodesign.com/3052738/how-ui-ux-design-will-map-the-future-of-self-driving-cars?partner=rss#6]]",
+            "fontSize": 12
+        },
         {
-            "text": "Material Design\n##[[www.google.com/design/spec/style/color.html#color-color-palette]]", 
-            "fontSize": 15, 
-            "radius": 104.15506027152375, 
             "pixLoc": [
-                928.6164801864072, 
-                668.5426200509379
-            ]
-        }, 
+                1093.616480186407,
+                777.5426200509379
+            ],
+            "radius": 104.15506027152375,
+            "text": "Material Design\n##[[www.google.com/design/spec/style/color.html#color-color-palette]]",
+            "fontSize": 15
+        },
         {
-            "text": "right click option menu", 
-            "fontSize": 12, 
-            "radius": 56.65623099478355, 
             "pixLoc": [
-                1184.7440949385102, 
-                691.829583864526
-            ]
-        }, 
+                1349.7440949385102,
+                800.829583864526
+            ],
+            "radius": 56.65623099478355,
+            "text": "right click option menu",
+            "fontSize": 12
+        },
         {
-            "text": "<<Oct 29>>", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                916.0710796843479, 
-                99.32609221711752
-            ]
-        }, 
+                1081.0710796843478,
+                208.32609221711755
+            ],
+            "radius": 50,
+            "text": "<<Oct 29>>",
+            "fontSize": 12
+        },
         {
-            "text": "<<5 pm Nov 1 2016>>\n#y #B", 
-            "fontSize": 12, 
-            "radius": 77.46623463397306, 
             "pixLoc": [
-                1075.9562413662447, 
-                234.45112999616407
-            ]
-        }, 
+                1240.9562413662447,
+                343.4511299961641
+            ],
+            "radius": 77.46623463397306,
+            "text": "<<5 pm Nov 1 2016>>\n#y #B",
+            "fontSize": 12
+        },
         {
-            "text": "*Home*\n[[nautilus /home]]", 
-            "fontSize": 12, 
-            "radius": 60.41642380530676, 
             "pixLoc": [
-                1237.6588437641938, 
-                83.80947276372684
-            ]
-        }, 
+                1402.6588437641938,
+                192.80947276372683
+            ],
+            "radius": 60.41642380530676,
+            "text": "*Home*\n[[nautilus /home]]",
+            "fontSize": 12
+        },
         {
-            "text": "GIT TEST! #r", 
-            "fontSize": 12, 
-            "radius": 87.28509917610415, 
             "pixLoc": [
-                302.0, 
-                373.00000000000006
-            ]
+                467.0,
+                482.0
+            ],
+            "radius": 87.28509917610415,
+            "text": "",
+            "fontSize": 12
         }
-    ], 
-    "root_geometry": "1112x582+128+117", 
-    "zoom": 0.7513148009015774
+    ],
+    "zoom": 0.7513148009015774,
+    "links": [
+        {
+            "tA": 3,
+            "tB": 1,
+            "importance": 0
+        },
+        {
+            "tA": 5,
+            "tB": 6,
+            "importance": 1
+        },
+        {
+            "tA": 6,
+            "tB": 7,
+            "importance": 1
+        },
+        {
+            "tA": 5,
+            "tB": 8,
+            "importance": 1
+        },
+        {
+            "tA": 5,
+            "tB": 9,
+            "importance": 1
+        },
+        {
+            "tA": 8,
+            "tB": 9,
+            "importance": 1
+        },
+        {
+            "tA": 5,
+            "tB": 10,
+            "importance": 1
+        },
+        {
+            "tA": 10,
+            "tB": 11,
+            "importance": 1
+        },
+        {
+            "tA": 10,
+            "tB": 12,
+            "importance": 1
+        },
+        {
+            "tA": 13,
+            "tB": 14,
+            "importance": 1
+        },
+        {
+            "tA": 5,
+            "tB": 15,
+            "importance": 1
+        },
+        {
+            "tA": 13,
+            "tB": 19,
+            "importance": 1
+        },
+        {
+            "tA": 13,
+            "tB": 3,
+            "importance": 1
+        },
+        {
+            "tA": 13,
+            "tB": 1,
+            "importance": 1
+        },
+        {
+            "tA": 13,
+            "tB": 16,
+            "importance": 1
+        },
+        {
+            "tA": 20,
+            "tB": 21,
+            "importance": 1
+        },
+        {
+            "tA": 2,
+            "tB": 23,
+            "importance": 1
+        },
+        {
+            "tA": 26,
+            "tB": 2,
+            "importance": 1
+        },
+        {
+            "tA": 20,
+            "tB": 2,
+            "importance": 1
+        }
+    ]
 }

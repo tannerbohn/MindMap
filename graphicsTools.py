@@ -1,6 +1,5 @@
-from Tkinter import *
-import PIL.Image
-from PIL import ImageTk
+import tkinter as tk
+from PIL import ImageTk, Image
 
 
 WIDTH = 1366#3286#
@@ -159,10 +158,10 @@ def loadImage(fileName, size, imageList, root, background=BG_DARK):
 
 	tk_image=[]
 	with open(fileName,"rb") as fp:
-		original = PIL.Image.open(fp)
-		resized = original.resize(size,PIL.Image.ANTIALIAS)
+		original = Image.open(fp)
+		resized = original.resize(size,Image.ANTIALIAS)
 		image = ImageTk.PhotoImage(resized)
-		tk_image = Label(root, image=image, background=background, cursor='hand1')
+		tk_image = tk.Label(root, image=image, background=background, cursor='hand1')
 		imageList.append(image)	
 
 	return tk_image, imageList

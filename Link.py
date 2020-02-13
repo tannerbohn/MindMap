@@ -1,9 +1,10 @@
-from header import *
+import calculations as calc
+import graphicsTools as g
+import threading
 
 class Link:
 
 	width = 3.0
-
 	length=0.0
 	z_length=0.0
 
@@ -27,7 +28,7 @@ class Link:
 		self.colour = self.cs.link # g.shadeN([self.tA.colour, self.cs.background],[0,1],0.5)  #
 
 		if importance != 1:
-			self.colour =  g.shadeN([self.colour, self.cs.background], [0,1], 0.75)
+			self.colour = g.shadeN([self.colour, self.cs.background], [0,1], 0.75)
 
 			self.width = 5
 
@@ -141,7 +142,6 @@ class Link:
 			w = self.z_width*f
 			self.canvas.itemconfig(self.canvasIndex, width=int(w))
 
-
 		self.root.update()
 
 		if stage < total_stages:
@@ -155,7 +155,7 @@ class Link:
 		x0,y0,x1,y1 = self.tA.pixLoc[0], self.tA.pixLoc[1], self.tB.pixLoc[0], self.tB.pixLoc[1]
 
 		# only want line to go between white rings around thoughts
-		length = dist((x0, y0), (x1, y1))
+		length = calc.dist((x0, y0), (x1, y1))
 
 		#frac of way white ring on A is to center to A
 		f0 = (1.0*length - (self.tA.z_r + self.tA.z_ringSpacing[0]))/length
@@ -167,7 +167,7 @@ class Link:
 		x1p = (1.0-f1)*x0 + f1*x1
 		y1p = (1.0-f1)*y0 + f1*y1
 
-		self.z_length = dist((x0p, y0p), (x1p, y1p))
+		self.z_length = calc.dist((x0p, y0p), (x1p, y1p))
 		self.length = self.z_length/self.parentSheet.curZoom
 
 		return (x0p, y0p, x1p, y1p)

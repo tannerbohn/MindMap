@@ -1,14 +1,16 @@
-from Tkinter import *
-
+import tkinter as tk
+import sys
 import subprocess
 import math
 import threading
+import ColourScheme as cs
 import time
-import tkMessageBox
+import os
+
 
 from header import DIR
 
-sys.path.insert(0, DIR+'/GraphicsTools/')
+sys.path.insert(0, DIR+'\\GraphicsTools\\')
 import graphicsTools as g
 
 from ColourScheme import *
@@ -29,7 +31,7 @@ def addLeave(event=[], stage=0):
 	
 	if stage<=total_stages:
 		bgColour = g.shadeN([(1.0,1.0,1.0), cs.background], [0,1], f)
-		textColour = g.shadeN([g.darkText, g.lightText], [0,1], f)
+		textColour = g.shadeN([cs.darkText, cs.lightText], [0,1], f)
 
 
 		fontColour = g.shadeN([bgColour, textColour], [0,1], cs.fontOpacity)
@@ -77,13 +79,13 @@ def sheetClick(filename, event=[]):
 	if filename=='+':
 		filename = tk_text.get('1.0', 'end').strip().replace(' ','_').split('.')[0]
 		filename = filename+'.json'
-		filename = DIR+'/Sheets/'+filename
+		filename = DIR+'\\Sheets\\'+filename
 
-	print filename
+	print(filename)
 
-	cmd = 'python '+DIR+'/mindmap.py '+filename
+	cmd = 'python '+DIR+'\\mindmap.py '+filename
 
-	subprocess.call(cmd+" >/dev/null 2>&1 &", shell=True)
+	subprocess.call(cmd, shell=True)
 
 	exit()
 
@@ -91,12 +93,12 @@ def sheetRightClick(sheet, event=[]):
 	
 	
 
-	deleteSheet = tkMessageBox.askyesno("Deletion Confirmation",
+	deleteSheet = tk.messagebox.askyesno("Deletion Confirmation",
 		"Would you like to delete the page "+sheet['name']+'?')
 
 	if deleteSheet:
 		filename = sheet['filename']
-		print "deleting ", filename
+		print("deleting ", filename)
 
 
 		cmd = 'rm '+filename
@@ -148,23 +150,13 @@ def pulse(sheet, stage=0):
 
 
 def getFileList():
-
-	subprocess.call("ls "+DIR+"/Sheets/*.json > "+DIR+"/sheetList.txt", shell=True)
-
-	# iterate through list and get data
-	F = open(DIR+'/sheetList.txt')
-	fData = F.read()
-	fLines = fData.split('\n')
-
-	FILES = []
-	for sheet in fLines:
-		if sheet.strip() == '': continue
-		
-		nameStr = sheet.split('/')
-		nameStr = nameStr[len(nameStr)-1].replace('.json', '')
-		FILES.append({'filename':sheet, 'name':nameStr})
-
-	return FILES
+	flines = os.listdir(DIR+'\\Sheets\\')
+	files = []
+	for name in flines:
+		sheet = DIR+'\\Sheets\\'+name
+		namestr = name.replace('.json','')
+		files.append({'filename':sheet, 'name':namestr})
+	return files
 
 def resizeLayout(event=[]):
 	global tk_sheets, addLabelGeom
@@ -224,7 +216,7 @@ def initPages():
 	sheets = getFileList()
 
 	for s in sheets:
-		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
+		s_box = tk.Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 		s_box.bind('<Button-1>', lambda event, filename=s['filename']: sheetClick(filename, event))
 		s_box.bind('<Button-3>', lambda event, sheet=s: sheetRightClick(sheet, event))
 
@@ -233,7 +225,7 @@ def initPages():
 		
 		tk_sheets.append(s_box)
 
-	s_box_plus = Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
+	s_box_plus = tk.Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
 	s_box_plus.bind('<Button-1>', addFile)
 	s_box_plus.bind('<Enter>', lambda event, sheet=s_box_plus: labelEnter(sheet, event))
 	s_box_plus.bind('<Leave>', lambda event, sheet=s_box_plus: labelLeave(sheet, event))
@@ -246,7 +238,7 @@ if __name__ == "__main__":
 	
 	cs = ColourScheme()
 
-	tk_root = Tk()
+	tk_root = tk.Tk()
 	#tk_canvas = Canvas(tk_root)
 
 	graphicsInit()
@@ -265,7 +257,7 @@ if __name__ == "__main__":
 	tk_sheets=[]
 	fontColour = g.toHex(g.shadeN([cs.background, cs.lightText], [0,1], cs.fontOpacity))
 	for s in sheets:
-		s_box = Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
+		s_box = tk.Label(tk_root, text=s['name'], font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=tk.CENTER)
 		s_box.bind('<Button-1>', lambda event, filename=s['filename']: sheetClick(filename, event))
 		s_box.bind('<Button-3>', lambda event, sheet=s: sheetRightClick(sheet, event))
 
@@ -274,14 +266,14 @@ if __name__ == "__main__":
 		
 		tk_sheets.append(s_box)
 
-	s_box_plus = Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=CENTER)
+	s_box_plus = tk.Label(tk_root, text='+', font=g.FONT, bg=g.toHex(cs.background), fg=fontColour, cursor='hand1', anchor=tk.CENTER)
 	s_box_plus.bind('<Button-1>', addFile)
 	s_box_plus.bind('<Enter>', lambda event, sheet=s_box_plus: labelEnter(sheet, event))
 	s_box_plus.bind('<Leave>', lambda event, sheet=s_box_plus: labelLeave(sheet, event))
 	
 	tk_sheets.append(s_box_plus)
 
-	tk_text = Text(tk_root)
+	tk_text = tk.Text(tk_root)
 	tk_text.configure(bd=0, highlightthickness=0)
 	tk_text.bind('<Return>', lambda event, filename='+': sheetClick(filename, event))
 	tk_text.bind('<Enter>', addEnter)

@@ -28,7 +28,7 @@ def parseTime(inStr):
 			# see if we can try parse natural language
 			return getTimeVec(inStr)
 	except:
-		print "time parsing error"
+		print("time parsing error")
 		return getTimeVec("now")
 
 def timeDiff(T1, T2=[], short=False):
