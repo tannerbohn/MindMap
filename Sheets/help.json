@@ -1,671 +1,671 @@
 {
-    "links": [
-        {
-            "importance": 1, 
-            "tB": 10, 
-            "tA": 4
-        }, 
-        {
-            "importance": 1, 
-            "tB": 5, 
-            "tA": 1
-        }, 
-        {
-            "importance": 1, 
-            "tB": 6, 
-            "tA": 2
-        }, 
-        {
-            "importance": 1, 
-            "tB": 7, 
-            "tA": 2
-        }, 
-        {
-            "importance": 1, 
-            "tB": 9, 
-            "tA": 3
-        }, 
-        {
-            "importance": 1, 
-            "tB": 14, 
-            "tA": 11
-        }, 
-        {
-            "importance": 1, 
-            "tB": 12, 
-            "tA": 4
-        }, 
-        {
-            "importance": 1, 
-            "tB": 3, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 4, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 1, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 2, 
-            "tA": 15
-        }, 
-        {
-            "importance": 0, 
-            "tB": 14, 
-            "tA": 21
-        }, 
-        {
-            "importance": 0, 
-            "tB": 11, 
-            "tA": 12
-        }, 
-        {
-            "importance": 1, 
-            "tB": 24, 
-            "tA": 3
-        }, 
-        {
-            "importance": 1, 
-            "tB": 8, 
-            "tA": 24
-        }, 
-        {
-            "importance": 1, 
-            "tB": 25, 
-            "tA": 24
-        }, 
-        {
-            "importance": 1, 
-            "tB": 27, 
-            "tA": 26
-        }, 
-        {
-            "importance": 1, 
-            "tB": 28, 
-            "tA": 26
-        }, 
-        {
-            "importance": 1, 
-            "tB": 29, 
-            "tA": 26
-        }, 
-        {
-            "importance": 1, 
-            "tB": 30, 
-            "tA": 29
-        }, 
-        {
-            "importance": 1, 
-            "tB": 31, 
-            "tA": 28
-        }, 
-        {
-            "importance": 1, 
-            "tB": 32, 
-            "tA": 27
-        }, 
-        {
-            "importance": 1, 
-            "tB": 33, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 35, 
-            "tA": 33
-        }, 
-        {
-            "importance": 1, 
-            "tB": 36, 
-            "tA": 33
-        }, 
-        {
-            "importance": 1, 
-            "tB": 37, 
-            "tA": 33
-        }, 
-        {
-            "importance": 1, 
-            "tB": 38, 
-            "tA": 33
-        }, 
-        {
-            "importance": 1, 
-            "tB": 39, 
-            "tA": 33
-        }, 
-        {
-            "importance": 1, 
-            "tB": 40, 
-            "tA": 34
-        }, 
-        {
-            "importance": 1, 
-            "tB": 41, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 34, 
-            "tA": 41
-        }, 
-        {
-            "importance": 0, 
-            "tB": 34, 
-            "tA": 33
-        }, 
-        {
-            "importance": 1, 
-            "tB": 42, 
-            "tA": 34
-        }, 
-        {
-            "importance": 1, 
-            "tB": 17, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 18, 
-            "tA": 17
-        }, 
-        {
-            "importance": 1, 
-            "tB": 19, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 22, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 13, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 11, 
-            "tA": 1
-        }, 
-        {
-            "importance": 1, 
-            "tB": 21, 
-            "tA": 11
-        }, 
-        {
-            "importance": 1, 
-            "tB": 16, 
-            "tA": 13
-        }, 
-        {
-            "importance": 1, 
-            "tB": 23, 
-            "tA": 22
-        }, 
-        {
-            "importance": 1, 
-            "tB": 20, 
-            "tA": 19
-        }, 
-        {
-            "importance": 1, 
-            "tB": 43, 
-            "tA": 33
-        }, 
-        {
-            "importance": 1, 
-            "tB": 44, 
-            "tA": 15
-        }, 
-        {
-            "importance": 1, 
-            "tB": 45, 
-            "tA": 44
-        }, 
-        {
-            "importance": 1, 
-            "tB": 46, 
-            "tA": 45
-        }, 
-        {
-            "importance": 1, 
-            "tB": 47, 
-            "tA": 45
-        }
-    ], 
+    "root_geometry": "1027x620+475+220",
     "thoughts": [
         {
-            "text": "creating #r2", 
-            "fontSize": 13, 
-            "radius": 50, 
             "pixLoc": [
-                611.0706238028083, 
-                24.93685367340435
-            ]
-        }, 
+                634.2186753733096,
+                87.3825003029355
+            ],
+            "radius": 50,
+            "text": "creating #r2",
+            "fontSize": 13
+        },
         {
-            "text": "resizing #r2", 
-            "fontSize": 19, 
-            "radius": 75.58621384311844, 
             "pixLoc": [
-                632.4075489754238, 
-                356.5392901865048
-            ]
-        }, 
+                653.5718954845249,
+                388.1556853488305
+            ],
+            "radius": 75.58621384311844,
+            "text": "resizing #r2",
+            "fontSize": 19
+        },
         {
-            "text": "moving #r2", 
-            "fontSize": 15, 
-            "radius": 50, 
             "pixLoc": [
-                406.98707088244873, 
-                414.1284634219368
-            ]
-        }, 
+                449.1088768060896,
+                440.3907631133932
+            ],
+            "radius": 50,
+            "text": "moving #r2",
+            "fontSize": 15
+        },
         {
-            "text": "deleting #r2", 
-            "fontSize": 12, 
-            "radius": 49.99999999999999, 
             "pixLoc": [
-                498.44755743590474, 
-                103.33991600395228
-            ]
-        }, 
+                532.0662342241901,
+                158.4963890381264
+            ],
+            "radius": 49.99999999999999,
+            "text": "deleting #r2",
+            "fontSize": 12
+        },
         {
-            "text": "to create a circle, double click on the canvas", 
-            "fontSize": 9, 
-            "radius": 59.231495722685935, 
             "pixLoc": [
-                601.1981941053058, 
-                -112.4544596168395
-            ]
-        }, 
+                625.2640906136701,
+                -37.23547093538105
+            ],
+            "radius": 59.231495722685935,
+            "text": "to create a circle, double click on the canvas",
+            "fontSize": 9
+        },
         {
-            "text": "to resize a circle, drag the white ring", 
-            "fontSize": 10, 
-            "radius": 71.02468759581859, 
             "pixLoc": [
-                748.4085979210781, 
-                471.7176366573694
-            ]
-        }, 
+                758.7882664102882,
+                492.6258408779608
+            ],
+            "radius": 73.75484125974062,
+            "text": "to resize a circle, drag the outer ring",
+            "fontSize": 10
+        },
         {
-            "text": "to resize text, drag the white ring (right hold)", 
-            "fontSize": 11, 
-            "radius": 71.39410298049881, 
             "pixLoc": [
-                575.6410782147847, 
-                504.6257356490482
-            ]
-        }, 
+                629.156607597745,
+                527.6313280731672
+            ],
+            "radius": 84.6713999708742,
+            "text": "to resize text, drag the outer ring (while right clicking)",
+            "fontSize": 12
+        },
         {
-            "text": "to move only the circle, click inside the white ring so that a red ring appears, and drag", 
-            "fontSize": 8, 
-            "radius": 70.23786792439621, 
             "pixLoc": [
-                221.8790140542751, 
-                551.5197767121849
-            ]
-        }, 
+                281.2104125628486,
+                565.0087343517125
+            ],
+            "radius": 70.23786792439621,
+            "text": "to move only the circle, click inside the white ring so that a red ring appears, and drag",
+            "fontSize": 8
+        },
         {
-            "text": "to move around the canvas, left click and drag", 
-            "fontSize": 10, 
-            "radius": 62.54834198253775, 
             "pixLoc": [
-                334.58925310076324, 
-                497.22141337592024
-            ]
-        }, 
+                383.44192190206627,
+                515.7585181736958
+            ],
+            "radius": 62.54834198253775,
+            "text": "to move around the canvas, left click and drag #y",
+            "fontSize": 10
+        },
         {
-            "text": "to delete a circle, drag it's radius to zero", 
-            "fontSize": 10, 
-            "radius": 68.60025445251433, 
             "pixLoc": [
-                422.7589297550511, 
-                4.615619028925981
-            ]
-        }, 
+                463.4144177336198,
+                68.95054144173082
+            ],
+            "radius": 68.60025445251433,
+            "text": "to delete a circle, drag it's radius to zero",
+            "fontSize": 10
+        },
         {
-            "text": "to create a link between A and B, click on the small white circles of A and B", 
-            "fontSize": 9, 
-            "radius": 72.54089895318563, 
             "pixLoc": [
-                697.4543836559557, 
-                -55.68798885619967
-            ]
-        }, 
+                712.5712920201544,
+                14.253391432546021
+            ],
+            "radius": 72.54089895318563,
+            "text": "to create a link between A and B, click on the small white circles of A and B",
+            "fontSize": 9
+        },
         {
-            "text": "to delete a link, right click on the link", 
-            "fontSize": 10, 
-            "radius": 58.41052550594844, 
             "pixLoc": [
-                532.7795910774148, 
-                -38.211171630646604
-            ]
-        }, 
+                563.206400792453,
+                30.105379845745823
+            ],
+            "radius": 58.41052550594844,
+            "text": "to delete a link, right click on the link",
+            "fontSize": 10
+        },
         {
-            "text": "Don't forget to save! #r2", 
-            "fontSize": 21, 
-            "radius": 92.59142264341595, 
             "pixLoc": [
-                725.3729286269067, 
-                99.85611805143958
-            ]
-        }, 
+                737.8942353044639,
+                155.33648159820527
+            ],
+            "radius": 92.59142264341595,
+            "text": "Don't forget to save! #r2",
+            "fontSize": 21
+        },
         {
-            "text": "the small circle will stay red when expecting a destination thought", 
-            "fontSize": 9, 
-            "radius": 69.61155694998071, 
             "pixLoc": [
-                850.4770439672466, 
-                -132.19931901184478
-            ]
-        }, 
+                851.3673557945684,
+                -55.14464045466017
+            ],
+            "radius": 69.61155694998071,
+            "text": "the small circle will stay red when expecting a destination thought",
+            "fontSize": 9
+        },
         {
-            "text": "Mind Mapper Controls #B#b", 
-            "fontSize": 20, 
-            "radius": 97.99999999999997, 
             "pixLoc": [
-                469.5124589666319, 
-                253.70148083752065
-            ]
-        }, 
+                505.82124695047276,
+                294.8787607692534
+            ],
+            "radius": 97.99999999999997,
+            "text": "Mind Mapper Controls #B#b",
+            "fontSize": 20
+        },
         {
-            "text": "icon at bottom or Ctrl-s", 
-            "fontSize": 12, 
-            "radius": 57.00746227100328, 
             "pixLoc": [
-                853.7145146944395, 
-                36.5080274924647
-            ]
-        }, 
+                854.3038371797759,
+                97.8778960571851
+            ],
+            "radius": 57.00746227100328,
+            "text": "icon at bottom or Ctrl-s",
+            "fontSize": 12
+        },
         {
-            "text": "execution #r3", 
-            "fontSize": 12, 
-            "radius": 58.8839603971781, 
             "pixLoc": [
-                655.4432182695969, 
-                222.43878679543008
-            ]
-        }, 
+                674.4659265903515,
+                266.52257569706154
+            ],
+            "radius": 58.8839603971781,
+            "text": "execution #r3",
+            "fontSize": 12
+        },
         {
-            "text": "\"python mindmap.py file.json\" will open up or create the specified file. If no file give, it will use a default one", 
-            "fontSize": 11, 
-            "radius": 108.99162596209975, 
             "pixLoc": [
-                827.388035501099, 
-                308.8225466485759
-            ]
-        }, 
+                830.4249444874047,
+                344.8751923439052
+            ],
+            "radius": 108.99162596209975,
+            "text": "\"python mindmap.py file.json\" will open up or create the specified file. If no file give, it will use a default one",
+            "fontSize": 11
+        },
         {
-            "text": "change colours #r3", 
-            "fontSize": 12, 
-            "radius": 56.986201282368256, 
             "pixLoc": [
-                337.0406704243069, 
-                348.6421332662919
-            ]
-        }, 
+                385.66542967852354,
+                380.99273122618933
+            ],
+            "radius": 56.986201282368256,
+            "text": "change colours #r3",
+            "fontSize": 12
+        },
         {
-            "text": "use #r1, #r2, or #r3 to set colour (or #p/b/g/y/o/w 1/2/3)", 
-            "fontSize": 12, 
-            "radius": 86.26561761157105, 
             "pixLoc": [
-                184.01801011301677, 
-                362.62807533775754
-            ]
-        }, 
+                246.8693659041101,
+                393.6783929690135
+            ],
+            "radius": 86.26561761157105,
+            "text": "use #r1, #r2, or #r3 to set colour (or #p/b/g/y/o/w 1/2/3)",
+            "fontSize": 12
+        },
         {
-            "text": "to create a lighter link, right click small circle instead", 
-            "fontSize": 9, 
-            "radius": 64.81310045707258, 
             "pixLoc": [
-                715.5538381013769, 
-                -193.0793021464439
-            ]
-        }, 
+                728.98803074616,
+                -110.36457980577038
+            ],
+            "radius": 64.81310045707258,
+            "text": "to create a lighter link, right click small circle instead",
+            "fontSize": 9
+        },
         {
-            "text": "zooming #r3", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                512.2929876558093, 
-                383.68847185463926
-            ]
-        }, 
+                544.6244475755776,
+                412.7807934378414
+            ],
+            "radius": 56.693840003514865,
+            "text": "zooming #r3",
+            "fontSize": 12
+        },
         {
-            "text": "scroll on canvas to zoom in and out", 
-            "fontSize": 12, 
-            "radius": 67.90866911725259, 
             "pixLoc": [
-                449.76759957162653, 
-                526.8387024684289
-            ]
-        }, 
+                498.8704290068969,
+                555.5144507769719
+            ],
+            "radius": 67.90866911725259,
+            "text": "scroll on canvas to zoom in and out #y",
+            "fontSize": 12
+        },
         {
-            "text": "circles", 
-            "fontSize": 12, 
-            "radius": 40.40421066883559, 
             "pixLoc": [
-                282.75899718887456, 
-                409.19224857318676
-            ]
-        }, 
+                326.76121817069213,
+                457.83017388498007
+            ],
+            "radius": 40.40421066883559,
+            "text": "circles",
+            "fontSize": 12
+        },
         {
-            "text": "to move a circle, and those connected to it, right click and drag", 
-            "fontSize": 10, 
-            "radius": 75.7947552976123, 
             "pixLoc": [
-                97.65094036070144, 
-                469.24952923299617
-            ]
-        }, 
+                168.53188767071833,
+                490.38719468805067
+            ],
+            "radius": 75.7947552976123,
+            "text": "to move a circle, and those connected to it, right click and drag",
+            "fontSize": 10
+        },
         {
-            "text": "Wrapper #b", 
-            "fontSize": 22, 
-            "radius": 84.97398431180655, 
             "pixLoc": [
-                1010.0279849048966, 
-                298.95011695107513
-            ]
-        }, 
+                996.0847625407359,
+                335.92060758426817
+            ],
+            "radius": 84.97398431180655,
+            "text": "Wrapper #b",
+            "fontSize": 22
+        },
         {
-            "text": "creating #r2", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                952.4388116694645, 
-                173.07663830791725
-            ]
-        }, 
+                943.8496847761713,
+                221.74965189886498
+            ],
+            "radius": 50,
+            "text": "creating #r2",
+            "fontSize": 12
+        },
         {
-            "text": "deleting #r2", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                1142.4830833463918, 
-                256.1695882618978
-            ]
-        }, 
+                1116.2254413992346,
+                297.1174069591656
+            ],
+            "radius": 50,
+            "text": "deleting #r2",
+            "fontSize": 12
+        },
         {
-            "text": "opening #r2", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                967.2474562157181, 
-                424.0008931194402
-            ]
-        }, 
+                957.2815619156306,
+                449.3453478730346
+            ],
+            "radius": 50,
+            "text": "opening #r2",
+            "fontSize": 12
+        },
         {
-            "text": "to open a sheet, left click on it", 
-            "fontSize": 12, 
-            "radius": 55.80462723984783, 
             "pixLoc": [
-                1076.6668853630385, 
-                414.1284634219368
-            ]
-        }, 
+                1056.5282096683013,
+                440.3907631133932
+            ],
+            "radius": 55.80462723984783,
+            "text": "to open a sheet, left click on it",
+            "fontSize": 12
+        },
         {
-            "text": "to delete a sheet, right click on it", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                1165.5187526405634, 
-                349.9576703881701
-            ]
-        }, 
+                1137.119472505058,
+                382.1859621757378
+            ],
+            "radius": 50,
+            "text": "to delete a sheet, right click on it",
+            "fontSize": 12
+        },
         {
-            "text": "to create a new sheet, press the '+' tile, and type in the sheet name", 
-            "fontSize": 12, 
-            "radius": 91.24008104006582, 
             "pixLoc": [
-                1088.1847200101267, 
-                145.92745663978465
-            ]
-        }, 
+                1066.975225221217,
+                197.12454380985528
+            ],
+            "radius": 91.24008104006582,
+            "text": "to create a new sheet, press the '+' tile, and type in the sheet name",
+            "fontSize": 12
+        },
         {
-            "text": "formatting text #r3", 
-            "fontSize": 19, 
-            "radius": 81.40680286375984, 
             "pixLoc": [
-                272.2769021384588, 
-                252.7325016441805
-            ]
-        }, 
+                326.9227827072329,
+                293.99986807688117
+            ],
+            "radius": 81.40680286375984,
+            "text": "formatting text #r3",
+            "fontSize": 19
+        },
         {
-            "text": "to add executable terminal code, put the code on it's own line surrounded by [[ and ]]", 
-            "fontSize": 12, 
-            "radius": 103.6729942027049, 
             "pixLoc": [
-                104.92010204347798, 
-                -7.305108478654267
-            ]
-        }, 
+                175.125231600674,
+                58.13809018768987
+            ],
+            "radius": 103.6729942027049,
+            "text": "to add executable terminal code, put the code on it's own line surrounded by [[ and ]]",
+            "fontSize": 12
+        },
         {
-            "text": "To make a word bold, put *stars* around it", 
-            "fontSize": 12, 
-            "radius": 75.54527172214213, 
             "pixLoc": [
-                -79.0170545976746, 
-                146.6038823960283
-            ]
-        }, 
+                8.288808343393157,
+                197.73808191075642
+            ],
+            "radius": 75.54527172214213,
+            "text": "To make a word bold, put *stars* around it",
+            "fontSize": 12
+        },
         {
-            "text": "to make all text bold, include #B", 
-            "fontSize": 12, 
-            "radius": 66.85962192559275, 
             "pixLoc": [
-                -25.541393736201996, 
-                248.61898927022241
-            ]
-        }, 
+                56.792809124774294,
+                290.26879109369827
+            ],
+            "radius": 66.85962192559275,
+            "text": "to make all text bold, include #B",
+            "fontSize": 12
+        },
         {
-            "text": "to make all text italic, include #I", 
-            "fontSize": 12, 
-            "radius": 68.41883772254596, 
             "pixLoc": [
-                107.55675025986875, 
-                246.07379522813017
-            ]
-        }, 
+                177.5167492572641,
+                287.96022506912584
+            ],
+            "radius": 68.41883772254596,
+            "text": "to make all text italic, include #I",
+            "fontSize": 12
+        },
         {
-            "text": "to make a single word small, put a # infront of it", 
-            "fontSize": 11, 
-            "radius": 73.83402768920521, 
             "pixLoc": [
-                -57.767030380240044, 
-                22.309708291957392
-            ]
-        }, 
+                27.5632067265542,
+                84.99960199776841
+            ],
+            "radius": 73.83402768920521,
+            "text": "to make a single word small, put a # infront of it",
+            "fontSize": 11
+        },
         {
-            "text": "to make a whole line small, begin it with ##", 
-            "fontSize": 12, 
-            "radius": 52.39936547814601, 
             "pixLoc": [
-                38.22852316590172, 
-                153.26789321190822
-            ]
-        }, 
+                114.63400359380245,
+                203.78253616552234
+            ],
+            "radius": 52.39936547814601,
+            "text": "to make a whole line small, begin it with ##",
+            "fontSize": 12
+        },
         {
-            "text": "ex.\n[[google-chrome youtube.com]]", 
-            "fontSize": 12, 
-            "radius": 77.2377620567301, 
             "pixLoc": [
-                -29.65890139507684, 
-                -120.79713929074487
-            ]
-        }, 
+                53.05810830039752,
+                -44.80252732894617
+            ],
+            "radius": 77.2377620567301,
+            "text": "ex.\n[[google-chrome youtube.com]]",
+            "fontSize": 12
+        },
         {
-            "text": "executable code #r2", 
-            "fontSize": 12, 
-            "radius": 62.86769787198564, 
             "pixLoc": [
-                230.31508063915805, 
-                114.49576849973201
-            ]
-        }, 
+                288.86217363757186,
+                168.61507610912818
+            ],
+            "radius": 62.86769787198564,
+            "text": "executable code #r2",
+            "fontSize": 12
+        },
         {
-            "text": "to execute the code, Ctrl-LeftClick on the circle", 
-            "fontSize": 12, 
-            "radius": 75.6962709287973, 
             "pixLoc": [
-                200.69779154665025, 
-                -142.18740363533377
-            ]
-        }, 
+                261.99841935865345,
+                -64.20412764149795
+            ],
+            "radius": 75.6962709287973,
+            "text": "to execute the code, Ctrl-LeftClick on the circle",
+            "fontSize": 12
+        },
         {
-            "text": "to prevent auto-circle-sizing, include #s", 
-            "fontSize": 12, 
-            "radius": 73.5328044930449, 
             "pixLoc": [
-                32.54058806767449, 
-                349.70780991338586
-            ]
-        }, 
+                87.55817563674896,
+                400.65298992992194
+            ],
+            "radius": 82.53121260946688,
+            "text": "to prevent auto-circle-sizing, include #s",
+            "fontSize": 12
+        },
         {
-            "text": "time tags #r2", 
-            "fontSize": 12, 
-            "radius": 50, 
             "pixLoc": [
-                353.13918058873753, 
-                96.82985110366124
-            ]
-        }, 
+                400.2672529569188,
+                152.59156826688655
+            ],
+            "radius": 50,
+            "text": "time tags #r2",
+            "fontSize": 12
+        },
         {
-            "text": "to add a time tag, put a time inside <<,>>. A label will appear above the circle", 
-            "fontSize": 12, 
-            "radius": 86.42600449394993, 
             "pixLoc": [
-                294.93099545427003, 
-                -23.647555337445453
-            ]
-        }, 
+                347.47071315241266,
+                43.31500913663204
+            ],
+            "radius": 86.42600449394993,
+            "text": "to add a time tag, put a time inside <<,>>. A label will appear above the circle",
+            "fontSize": 12
+        },
         {
-            "text": "<<tomorrow at 3pm>>", 
-            "fontSize": 10, 
-            "radius": 50, 
             "pixLoc": [
-                376.15171889771256, 
-                -133.9723713481211
-            ]
-        }, 
+                421.1403035773038,
+                -56.75285119051138
+            ],
+            "radius": 50,
+            "text": "<<tomorrow at 4pm>>",
+            "fontSize": 10
+        },
         {
-            "text": "updates every 5 seconds", 
-            "fontSize": 4, 
-            "radius": 16.61270982251361, 
             "pixLoc": [
-                398.96800239873835, 
-                -69.09916715748132
-            ]
+                441.83534530159034,
+                2.089057372426891
+            ],
+            "radius": 16.61270982251361,
+            "text": "updates every 5 seconds",
+            "fontSize": 4
         }
-    ], 
-    "root_geometry": "1027x620+171+722", 
-    "zoom": 0.7155379056205499
+    ],
+    "zoom": 0.6490139733519726,
+    "links": [
+        {
+            "tA": 4,
+            "tB": 10,
+            "importance": 1
+        },
+        {
+            "tA": 1,
+            "tB": 5,
+            "importance": 1
+        },
+        {
+            "tA": 2,
+            "tB": 6,
+            "importance": 1
+        },
+        {
+            "tA": 2,
+            "tB": 7,
+            "importance": 1
+        },
+        {
+            "tA": 3,
+            "tB": 9,
+            "importance": 1
+        },
+        {
+            "tA": 11,
+            "tB": 14,
+            "importance": 1
+        },
+        {
+            "tA": 4,
+            "tB": 12,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 3,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 4,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 1,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 2,
+            "importance": 1
+        },
+        {
+            "tA": 21,
+            "tB": 14,
+            "importance": 0
+        },
+        {
+            "tA": 12,
+            "tB": 11,
+            "importance": 0
+        },
+        {
+            "tA": 3,
+            "tB": 24,
+            "importance": 1
+        },
+        {
+            "tA": 24,
+            "tB": 8,
+            "importance": 1
+        },
+        {
+            "tA": 24,
+            "tB": 25,
+            "importance": 1
+        },
+        {
+            "tA": 26,
+            "tB": 27,
+            "importance": 1
+        },
+        {
+            "tA": 26,
+            "tB": 28,
+            "importance": 1
+        },
+        {
+            "tA": 26,
+            "tB": 29,
+            "importance": 1
+        },
+        {
+            "tA": 29,
+            "tB": 30,
+            "importance": 1
+        },
+        {
+            "tA": 28,
+            "tB": 31,
+            "importance": 1
+        },
+        {
+            "tA": 27,
+            "tB": 32,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 33,
+            "importance": 1
+        },
+        {
+            "tA": 33,
+            "tB": 35,
+            "importance": 1
+        },
+        {
+            "tA": 33,
+            "tB": 36,
+            "importance": 1
+        },
+        {
+            "tA": 33,
+            "tB": 37,
+            "importance": 1
+        },
+        {
+            "tA": 33,
+            "tB": 38,
+            "importance": 1
+        },
+        {
+            "tA": 33,
+            "tB": 39,
+            "importance": 1
+        },
+        {
+            "tA": 34,
+            "tB": 40,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 41,
+            "importance": 1
+        },
+        {
+            "tA": 41,
+            "tB": 34,
+            "importance": 1
+        },
+        {
+            "tA": 33,
+            "tB": 34,
+            "importance": 0
+        },
+        {
+            "tA": 34,
+            "tB": 42,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 17,
+            "importance": 1
+        },
+        {
+            "tA": 17,
+            "tB": 18,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 19,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 22,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 13,
+            "importance": 1
+        },
+        {
+            "tA": 1,
+            "tB": 11,
+            "importance": 1
+        },
+        {
+            "tA": 11,
+            "tB": 21,
+            "importance": 1
+        },
+        {
+            "tA": 13,
+            "tB": 16,
+            "importance": 1
+        },
+        {
+            "tA": 22,
+            "tB": 23,
+            "importance": 1
+        },
+        {
+            "tA": 19,
+            "tB": 20,
+            "importance": 1
+        },
+        {
+            "tA": 33,
+            "tB": 43,
+            "importance": 1
+        },
+        {
+            "tA": 15,
+            "tB": 44,
+            "importance": 1
+        },
+        {
+            "tA": 44,
+            "tB": 45,
+            "importance": 1
+        },
+        {
+            "tA": 45,
+            "tB": 46,
+            "importance": 1
+        },
+        {
+            "tA": 45,
+            "tB": 47,
+            "importance": 1
+        }
+    ]
 }

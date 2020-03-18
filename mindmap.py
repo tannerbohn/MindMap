@@ -1,13 +1,13 @@
-import header as h
 import sys
 import tkinter as tk
 from PIL import ImageTk
-import graphicsTools as g
+
 
 from Sheet import Sheet
+import settings
 
 
-def resizeLayout(event=[]):
+def resize_layout(event=[]):
     global sheet
 
     pixelX=tk_root.winfo_width()
@@ -16,9 +16,13 @@ def resizeLayout(event=[]):
     sheet.resize()
 
 
-def graphicsInit():
+def graphics_init():
     tk_root.title("MindMap")
-    tk_root.geometry("%dx%d%+d%+d" % (g.WIDTH/2, g.HEIGHT/2, g.WIDTH/4, g.HEIGHT/4))
+    tk_root.geometry("{}x{}+{}+{}".format(
+        settings.WINDOW_SIZE[0],
+        settings.WINDOW_SIZE[1], 
+        settings.SCREEN_SIZE[0]//2 - settings.WINDOW_SIZE[0]//2,
+        settings.SCREEN_SIZE[1]//2 - settings.WINDOW_SIZE[1]//2))
     tk_root.config(bg="black")
     tk_canvas.configure(bd=0, highlightthickness=0)
 
@@ -35,22 +39,25 @@ if __name__ == "__main__":
     tk_root = tk.Tk()
     tk_canvas = tk.Canvas(tk_root)
 
-    img = ImageTk.PhotoImage(file=h.DIR+'\\icons\\mindmap.png')
+    img = ImageTk.PhotoImage(file=settings.SRC_DIR+'/icons/mindmap.png')
     tk_root.tk.call('wm', 'iconphoto', tk_root._w, img)
 
-    graphicsInit()
+    graphics_init()
 
-    fileName=h.DIR+"\\Sheets\\tmp_thought.json"
+    
+    filename=settings.SRC_DIR+"/Sheets/tmp_thought.json"
     if len(sys.argv) >= 2:
-        fileName = sys.argv[1]
-    print("fileName:", fileName)
-
-    sheet = Sheet(root=tk_root, canvas=tk_canvas, fileName=fileName)
+        filename = sys.argv[1]
+    
+    print("filename:", filename)
+    
+    sheet = Sheet(root=tk_root, canvas=tk_canvas, filename=filename)
 
     # have to do this after creating sheet, since resizeLayout calls sheet resize functions
-    tk_root.bind("<Configure>", resizeLayout)
+    tk_root.bind("<Configure>", resize_layout)
 
 
-    resizeLayout()
+    resize_layout()
 
     tk_root.mainloop()
+    

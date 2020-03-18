@@ -1,12 +1,11 @@
-import graphicsTools as g
-import calculations as calc
+
 import threading
-import fileIO
 from Thought import Thought
 from Link import Link
-import header as h
 
-
+import settings
+import utils
+from utils import toHex, shadeN
 import ColourScheme as cs
 
 class Sheet:
@@ -29,7 +28,7 @@ class Sheet:
 
 	holding=False
 
-	def __init__(self, root, canvas, fileName):
+	def __init__(self, root, canvas, filename):
 		self.root=root
 		self.canvas=canvas
 
@@ -47,11 +46,11 @@ class Sheet:
 		self.canvas.bind('<4>', lambda event : self.zoom('in', event))
 		self.canvas.bind('<5>', lambda event : self.zoom('out', event))
 
-		self.canvas.configure(bg=g.toHex(self.cs.background))
+		self.canvas.configure(bg=toHex(self.cs.background))
 
 		self.curIndex=0 #keep track of index most recently assigned (first thought=1)
 
-		self.fileName=fileName
+		self.filename=filename
 
 		self.imageList=[]
 
@@ -66,8 +65,8 @@ class Sheet:
 	def initDrawing(self):
 		# draw the save button
 		
-		self.saveIcon, self.imageList = g.loadImage(fileName=h.DIR+"/icons/save.png", size=(20,20),
-				imageList=self.imageList, root=self.root, background=g.toHex(self.cs.background))
+		self.saveIcon, self.imageList = utils.loadImage(filename=settings.SRC_DIR+"/icons/save.png", size=(20,20),
+				imageList=self.imageList, root=self.root, background=toHex(self.cs.background))
 		self.saveIcon.bind("<Button-1>", self.handleSavePress)
 
 
@@ -116,7 +115,7 @@ class Sheet:
 
 
 	def loadFile(self):
-		data = fileIO.jsonLoad(self.fileName)
+		data = utils.jsonLoad(self.filename)
 		
 		if data == {}:
 			return
@@ -128,10 +127,13 @@ class Sheet:
 		#geom = geom.split('+')[0]+'+0+0'
 		#self.root.geometry(geom)
 		
+		#print("GEOM:", geom)
 		geomD = geom.replace('+', ' ').replace('x', ' ').split()
-		geomD = [int(d) for d in geomD]
-		geomD2 = (geomD[0], geomD[1], int(g.WIDTH/2 - geomD[0]/2), int(g.HEIGHT/2 - geomD[1]/2))
-		geom = '%sx%s+%s+%s'%geomD2
+		geomD = tuple([int(d) for d in geomD])
+		#geomD2 = (geomD[0], geomD[1], int(settings.WINDOW_SIZE[0]/2 - geomD[0]/2), int(settings.WINDOW_SIZE[1]/2 - geomD[1]/2))
+		#geomD2 = (geomD[0], geomD[1], geomD[2], geomD[3])
+		print("GEOM D:", geomD)
+		geom = '%sx%s+%s+%s'%geomD
 		self.root.geometry(geom)
 
 		self.root.update()
@@ -191,7 +193,7 @@ class Sheet:
 			#l.grow()
 
 	
-		fileIO.jsonSave(data=data, fileName=self.fileName, indent=True, sort=False, oneLine=False)
+		utils.jsonSave(data=data, filename=self.filename, indent=True, sort=False, oneLine=False)
 		
 
 		self.pulse()
@@ -382,7 +384,7 @@ class Sheet:
 
 		# set circle colour back to white
 		TA = self.getThought(tA)
-		TA.canvas.itemconfig(TA.smallCircleIndex, fill=g.toHex(self.cs.smallCircle))
+		TA.canvas.itemconfig(TA.smallCircleIndex, fill=toHex(self.cs.smallCircle))
 
 		# reset link assignments
 		self.resetLinkData()
@@ -436,9 +438,9 @@ class Sheet:
 		f = 1.0*stage/total_stages
 		
 		if stage<=total_stages:
-			bkgColour = g.shadeN([self.cs.background, self.cs.backgroundPulse, self.cs.background], [0,0.5,1], f)
+			bkgColour = shadeN([self.cs.background, self.cs.backgroundPulse, self.cs.background], [0,0.5,1], f)
 			
-			self.canvas.configure(bg=g.toHex(bkgColour))
+			self.canvas.configure(bg=toHex(bkgColour))
 
 
 		if stage < total_stages:

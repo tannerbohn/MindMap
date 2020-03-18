@@ -1,12 +1,14 @@
-import graphicsTools as g
+
 import tkinter as tk
-import calculations as calc
 import math
 import subprocess
 import time
-import timeOperations as timeOps
 import threading
 import tkinter as tk
+
+import settings
+import utils
+from utils import toHex, shadeN
 
 class Thought:
 
@@ -161,7 +163,7 @@ class Thought:
 		x1p, y1p = (x+offset)+r*rFrac, (y+offset)+r*rFrac #x+r/2, y+r/2
 
 		if init:
-			fill = g.toHex(self.cs.lightGrey)
+			fill = toHex(self.cs.lightGrey)
 			self.pulseCircleIndex = self.canvas.create_oval(x0p, y0p, x1p, y1p,
 				fill=fill, width=0, activewidth=0, tags="pulseCircle")
 
@@ -176,7 +178,7 @@ class Thought:
 		x1p, y1p = x+r, y+r
 
 		if init:
-			fill, outline = g.toHex(self.colour), g.toHex(self.cs.highlight2)
+			fill, outline = toHex(self.colour), toHex(self.cs.highlight2)
 			self.mainCircleIndex = self.canvas.create_oval(x0p, y0p, x1p, y1p, fill=fill,
 					outline=fill, activeoutline=outline, width=2, activewidth=2, tags="mainCircle")
 			
@@ -192,8 +194,8 @@ class Thought:
 		'''
 		if init:
 			self.tk_text = tk.Text(self.root, bd=0, highlightthickness=0, wrap="word",
-					font=(g.mainFont, int(self.z_labelFontSize), "normal"),
-					bg=g.toHex(self.colour), fg=g.toHex(self.cs.lightText))
+					font=(settings.MAIN_FONT, int(self.z_labelFontSize), "normal"),
+					bg=toHex(self.colour), fg=toHex(self.cs.lightText))
 
 			self.tk_text.insert(tk.END, self.text) # set initial text
 			self.tk_text.tag_configure("center", justify='center')
@@ -217,9 +219,9 @@ class Thought:
 		x0p, y0p = x-ring1_r, y-ring1_r
 		x1p, y1p = x+ring1_r, y+ring1_r
 		if init:
-			outline = g.toHex(self.cs.ring1)
+			outline = toHex(self.cs.ring1)
 			self.mainRingIndex = self.canvas.create_oval(x0p, y0p, x1p, y1p, fill='',
-					outline=outline, activeoutline=g.toHex(self.cs.highlight2),
+					outline=outline, activeoutline=toHex(self.cs.highlight2),
 					width=self.z_ringWidths[0], activewidth = self.z_ringWidths[0]*2)
 		else:
 			self.canvas.coords(self.mainRingIndex, x0p, y0p, x1p, y1p)
@@ -233,8 +235,8 @@ class Thought:
 		ty = y-r-int(self.z_ringSpacing[0]) - 10*self.curZoom
 		if init:
 			self.labelIndex = self.canvas.create_text(tx, ty,
-				text="", font=(g.mainFont, int(self.z_fontSize), "normal"),
-				fill=g.toHex(g.shadeN([self.cs.background, self.cs.lightText], [0,1], 0.54)))
+				text="", font=(settings.MAIN_FONT, int(self.z_fontSize), "normal"),
+				fill=toHex(shadeN([self.cs.background, self.cs.lightText], [0,1], 0.54)))
 
 		self.canvas.coords(self.labelIndex, tx, ty)
 		#if fromZoom:
@@ -251,9 +253,9 @@ class Thought:
 		x0p, y0p = s_x-s_r, s_y-s_r
 		x1p, y1p = s_x+s_r, s_y+s_r
 		if init:
-			outline, fill = g.toHex(self.cs.ring1), g.toHex(self.cs.smallCircle)
+			outline, fill = toHex(self.cs.ring1), toHex(self.cs.smallCircle)
 			self.smallCircleIndex = self.canvas.create_oval(x0p, y0p, x1p, y1p, fill=fill,
-					outline=outline, width=0, activefill=g.toHex(self.cs.highlight2))
+					outline=outline, width=0, activefill=toHex(self.cs.highlight2))
 		else:
 			self.canvas.coords(self.smallCircleIndex, x0p, y0p, x1p, y1p)
 
@@ -277,8 +279,8 @@ class Thought:
 			x0p, y0p = (x+x_offset)-r*rFrac, (y+y_offset)-r*rFrac
 			x1p, y1p = (x+x_offset)+r*rFrac, (y+y_offset)+r*rFrac
 			if init:
-				fill = g.shadeN([self.cs.shadow, self.cs.background], [0,1.0], 1.0*math.sqrt(i/ns))
-				shadowIndex = self.canvas.create_oval(x0p, y0p, x1p, y1p, fill=g.toHex(fill), width=0)
+				fill = shadeN([self.cs.shadow, self.cs.background], [0,1.0], 1.0*math.sqrt(i/ns))
+				shadowIndex = self.canvas.create_oval(x0p, y0p, x1p, y1p, fill=toHex(fill), width=0)
 				self.shadowCircleIndex.append(shadowIndex)
 				self.canvas.tag_lower(shadowIndex, "all")
 			else:
@@ -511,7 +513,7 @@ class Thought:
 		cur = (event.x, event.y)
 
 		# calculate dist form center to cur
-		d = calc.dist(center, cur)/cz
+		d = utils.dist(center, cur)/cz
 
 		if d <= 10:
 			self.remove()
@@ -529,18 +531,16 @@ class Thought:
 
 		self.cursorPos = (event.x, event.y)
 
-		initDistance = calc.dist(self.dragInit, self.pixLoc)
+		initDistance = utils.dist(self.dragInit, self.pixLoc)
 
-		curDistance = calc.dist(self.cursorPos, self.pixLoc)
+		curDistance = utils.dist(self.cursorPos, self.pixLoc)
 
 		deltaDist = 1.0*curDistance / initDistance
 
-		#print "dist:", deltaDist
-
-		fontSize = int(self.dragFontInit*deltaDist) #max(min(int(deltaDist), 4), 40)
+		fontSize = int(self.dragFontInit*deltaDist)
 		self.fontSize = fontSize
 		self.z_fontSize = self.fontSize*self.curZoom
-		#self.tk_text.config(font=(g.mainFont, int(self.z_fontSize), "normal"))
+
 		self.updateFont()
 
 		self.resizeCircleForText()
@@ -603,11 +603,11 @@ class Thought:
 			self.parentSheet.linkImportance = importance #random.randint(1,2)
 
 			# hold circle colour
-			holdColour = g.shadeN([(1,1,1), self.cs.highlight2], [0,3], importance+2)
+			holdColour = shadeN([(1,1,1), self.cs.highlight2], [0,3], importance+2)
 			if importance==1:
-				self.canvas.itemconfig(self.smallCircleIndex, fill=g.toHex(holdColour))
+				self.canvas.itemconfig(self.smallCircleIndex, fill=toHex(holdColour))
 			else:
-				self.canvas.itemconfig(self.smallCircleIndex, fill=g.toHex(holdColour))
+				self.canvas.itemconfig(self.smallCircleIndex, fill=toHex(holdColour))
 		elif self.parentSheet.linkB == -1:
 			self.parentSheet.linkB = self.index
 
@@ -733,7 +733,7 @@ class Thought:
 
 		# shades for for 1, 2, 3, 4, 5
 		if foundTag and shadeChar.isdigit():
-			self.colour = g.shadeN([HIC, self.parentSheet.cs.background], [1, max_shades+1], int(shadeChar))
+			self.colour = shadeN([HIC, self.parentSheet.cs.background], [1, max_shades+1], int(shadeChar))
 
 
 		self.recolour()
@@ -744,17 +744,17 @@ class Thought:
 
 		# dynamically optimize text colour
 		textColour=self.textColour
-		lum = calc.luminance(self.colour)
+		lum = utils.luminance(self.colour)
 		if lum >= 0.5:
 			#print "light background"
 
 			# 87% opacity for important black text on coloured background
-			textColour=g.shadeN([self.colour, self.cs.darkText], [0, 1], self.cs.fontOpacity)
+			textColour=shadeN([self.colour, self.cs.darkText], [0, 1], self.cs.fontOpacity)
 		else:
 			#print "dark background"
 			#textColour=self.cs.lightText
 
-			textColour=g.shadeN([self.colour, self.cs.lightText], [0, 1], self.cs.fontOpacity)
+			textColour=shadeN([self.colour, self.cs.lightText], [0, 1], self.cs.fontOpacity)
 		
 		#if textColour != self.textColour:
 		self.textColour=textColour
@@ -762,7 +762,7 @@ class Thought:
 		insertbg=[v*0.5+w*0.5 for v,w in zip(self.textColour, self.cs.def_thought)]
 
 		if not fromZoom:
-			self.tk_text.configure(fg=g.toHex(textColour), insertbackground=g.toHex(insertbg))
+			self.tk_text.configure(fg=toHex(textColour), insertbackground=toHex(insertbg))
 
 
 		if not fromZoom:
@@ -782,8 +782,8 @@ class Thought:
 		elif '#I' in text:
 			fontThickness = "italic"
 		
-		self.tk_text.configure(font=(g.mainFont, int(self.z_fontSize//1), fontThickness))
-		self.canvas.itemconfig(self.labelIndex, font=(g.mainFont, max(1,int(self.z_labelFontSize//1)), "normal"))
+		self.tk_text.configure(font=(settings.MAIN_FONT, int(self.z_fontSize//1), fontThickness))
+		self.canvas.itemconfig(self.labelIndex, font=(settings.MAIN_FONT, max(1,int(self.z_labelFontSize//1)), "normal"))
 		
 		if '#' not in text and '*' not in text:
 			return
@@ -826,17 +826,17 @@ class Thought:
 					tagName='%s.%s'%(pos,wStart)+'WF'
 					self.tk_text.tag_add(tagName, '%s.%s'%(pos,wStart), '%s.%s'%(pos, wStart+len(word)))
 					
-					self.tk_text.tag_config(tagName, font=(g.mainFont, int(self.z_fontSize//2), fontThickness))
+					self.tk_text.tag_config(tagName, font=(settings.MAIN_FONT, int(self.z_fontSize//2), fontThickness))
 				elif W[0][0]=='*' and W[0][len(W[0])-1]=='*':
 					tagName='%s.%s'%(pos,wStart)+'BF'
 					self.tk_text.tag_add(tagName, '%s.%s'%(pos,wStart), '%s.%s'%(pos, wStart+len(word)))
 			
-					self.tk_text.tag_config(tagName, font=(g.mainFont, int(fontSize//1), "bold"))
+					self.tk_text.tag_config(tagName, font=(settings.MAIN_FONT, int(fontSize//1), "bold"))
 				else:
 					tagName='%s.%s'%(pos,wStart)+'norm'
 					self.tk_text.tag_add(tagName, '%s.%s'%(pos,wStart), '%s.%s'%(pos, wStart+len(word)))
 			
-					self.tk_text.tag_config(tagName, font=(g.mainFont, int(fontSize//1), fontThickness))
+					self.tk_text.tag_config(tagName, font=(settings.MAIN_FONT, int(fontSize//1), fontThickness))
 
 			pos += 1
 	
@@ -855,11 +855,11 @@ class Thought:
 
 			timeStr = text[start+2:end].strip()
 
-			parsedTime = timeOps.parseTime(timeStr)
+			parsedTime = utils.parseTime(timeStr)
 
 			self.parsedTime = parsedTime
 			# calculate time diff
-			diffStr = timeOps.timeDiff(parsedTime, short=True)
+			diffStr = utils.timeDiff(parsedTime, short=True)
 			#print diffStr
 
 			if not self.hasTime:
@@ -879,7 +879,7 @@ class Thought:
 		if not self.hasTime:
 			return
 
-		diffStr = timeOps.timeDiff(self.parsedTime, short=True)
+		diffStr = utils.timeDiff(self.parsedTime, short=True)
 		#print "watch: ", diffStr
 		self.canvas.itemconfig(self.labelIndex, text=diffStr)
 
@@ -889,8 +889,8 @@ class Thought:
 
 	def recolour(self, event=[]):
 
-		self.canvas.itemconfig(self.mainCircleIndex, fill = g.toHex(self.colour), outline=g.toHex(self.colour))
-		self.tk_text.configure(bg=g.toHex(self.colour))
+		self.canvas.itemconfig(self.mainCircleIndex, fill = toHex(self.colour), outline=toHex(self.colour))
+		self.tk_text.configure(bg=toHex(self.colour))
 
 
 
@@ -999,10 +999,10 @@ class Thought:
 			x0p, y0p = x-curRad, y-curRad
 			x1p, y1p = x+curRad, y+curRad
 
-			fill = g.shadeN([self.colour, self.cs.def_thought], [0,1], f)
+			fill = util.shadeN([self.colour, self.cs.def_thought], [0,1], f)
 
 			self.canvas.coords(self.pulseCircleIndex, x0p, y0p, x1p, y1p)
-			self.canvas.itemconfig(self.pulseCircleIndex, fill = g.toHex(fill))
+			self.canvas.itemconfig(self.pulseCircleIndex, fill = toHex(fill))
 
 
 
@@ -1015,7 +1015,7 @@ class Thought:
 			x0p, y0p = (x+offset)-r*rFrac, (y+offset)-r*rFrac #x-r/2, y-r/2
 			x1p, y1p = (x+offset)+r*rFrac, (y+offset)+r*rFrac #x+r/2, y+r/2
 			self.canvas.coords(self.pulseCircleIndex, x0p, y0p, x1p, y1p)
-			#self.canvas.itemconfig(self.pulseCircleIndex, fill = g.toHex(self.cs.lightGrey))
+			#self.canvas.itemconfig(self.pulseCircleIndex, fill = toHex(self.cs.lightGrey))
 
 			self.pulsePause=False
 
@@ -1037,7 +1037,7 @@ class Thought:
 			f = 1.0/self.parentSheet.zoomFac
 
 		#delta = getDir((pX/2, pY/2), self.pixLoc)
-		delta = calc.getDir(location, self.pixLoc)
+		delta = utils.getDir(location, self.pixLoc)
 
 		delta2 = (delta[0]*f, delta[1]*f)
 

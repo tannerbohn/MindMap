@@ -1,5 +1,4 @@
-import calculations as calc
-import graphicsTools as g
+import utils
 import threading
 
 class Link:
@@ -25,10 +24,10 @@ class Link:
 		self._layers = []
 
 		#self.colour = tuple([v*0.5 + 1.0*0.5 for v in self.parentSheet.colour])
-		self.colour = self.cs.link # g.shadeN([self.tA.colour, self.cs.background],[0,1],0.5)  #
+		self.colour = self.cs.link # utils.shadeN([self.tA.colour, self.cs.background],[0,1],0.5)  #
 
 		if importance != 1:
-			self.colour = g.shadeN([self.colour, self.cs.background], [0,1], 0.75)
+			self.colour = utils.shadeN([self.colour, self.cs.background], [0,1], 0.75)
 
 			self.width = 5
 
@@ -54,7 +53,7 @@ class Link:
 		#xb0,yb0,xb1,yb1 = self.getHeadCoords()
 
 		self.canvasIndex = self.add_to_layer(self.importance, self.canvas.create_line, (x0,y0,x1,y1),
-			fill=g.toHex(self.colour), activefill = g.toHex(self.cs.highlight2), width=int(self.z_width),
+			fill=utils.toHex(self.colour), activefill = utils.toHex(self.cs.highlight2), width=int(self.z_width),
 			activewidth = 5)
 
 	
@@ -155,7 +154,7 @@ class Link:
 		x0,y0,x1,y1 = self.tA.pixLoc[0], self.tA.pixLoc[1], self.tB.pixLoc[0], self.tB.pixLoc[1]
 
 		# only want line to go between white rings around thoughts
-		length = calc.dist((x0, y0), (x1, y1))
+		length = utils.dist((x0, y0), (x1, y1))
 
 		#frac of way white ring on A is to center to A
 		f0 = (1.0*length - (self.tA.z_r + self.tA.z_ringSpacing[0]))/length
@@ -167,7 +166,7 @@ class Link:
 		x1p = (1.0-f1)*x0 + f1*x1
 		y1p = (1.0-f1)*y0 + f1*y1
 
-		self.z_length = calc.dist((x0p, y0p), (x1p, y1p))
+		self.z_length = utils.dist((x0p, y0p), (x1p, y1p))
 		self.length = self.z_length/self.parentSheet.curZoom
 
 		return (x0p, y0p, x1p, y1p)

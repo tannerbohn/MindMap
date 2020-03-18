@@ -1,8 +1,5 @@
 import sys
-import graphicsTools as g
-from header import DIR
-
-sys.path.insert(0, DIR+'/GraphicsTools/')
+import utils
 
 
 class ColourScheme:
@@ -181,16 +178,16 @@ class ColourScheme:
 			
 			# www.google.com/design/spec/style/color.html#
 
-			self.blue = g.toFloatfHex('#2196F3')
-			self.red = g.toFloatfHex('#F44336')
-			self.orange = g.toFloatfHex('#FF9800')
-			self.yellow = g.toFloatfHex('#FFEB3B')
-			self.green= g.toFloatfHex('#4CAF50')
-			self.purple=g.toFloatfHex('#673AB7')
+			self.blue = utils.toFloatfHex('#2196F3')
+			self.red = utils.toFloatfHex('#F44336')
+			self.orange = utils.toFloatfHex('#FF9800')
+			self.yellow = utils.toFloatfHex('#FFEB3B')
+			self.green= utils.toFloatfHex('#4CAF50')
+			self.purple= utils.toFloatfHex('#673AB7')
 			self.white=(1,1,1)
 			self.black=(0,0,0)
 
-			self.blue_grey = g.toFloatfHex('#263238')
+			self.blue_grey = utils.toFloatfHex('#263238')
 
 			# canvas background colour
 		
@@ -223,24 +220,24 @@ class ColourScheme:
 				based on dark theme www.google.com/design/spec/style/color.html#color-themes
 			'''
 
-			self.grey1 = g.toFloatfHex('#000000')
-			self.grey2 = g.toFloatfHex('#212121')
-			self.grey3 = g.toFloatfHex('#303030')
-			self.grey4 = g.toFloatfHex('#424242')
+			self.grey1 = utils.toFloatfHex('#000000')
+			self.grey2 = utils.toFloatfHex('#212121')
+			self.grey3 = utils.toFloatfHex('#303030')
+			self.grey4 = utils.toFloatfHex('#424242')
 
 			
 			# www.google.com/design/spec/style/color.html#
 
-			self.blue = g.toFloatfHex('#2196F3')
-			self.red = g.toFloatfHex('#F44336')
-			self.orange = g.toFloatfHex('#FF9800')
-			self.yellow = g.toFloatfHex('#FFEB3B')
-			self.green= g.toFloatfHex('#4CAF50')
-			self.purple=g.toFloatfHex('#673AB7')
+			self.blue = utils.toFloatfHex('#2196F3')
+			self.red = utils.toFloatfHex('#F44336')
+			self.orange = utils.toFloatfHex('#FF9800')
+			self.yellow = utils.toFloatfHex('#FFEB3B')
+			self.green = utils.toFloatfHex('#4CAF50')
+			self.purple = utils.toFloatfHex('#673AB7')
 			self.white=(1,1,1)
 			self.black=(0,0,0)
 
-			self.lightblue = g.toFloatfHex('#03A9F4')
+			self.lightblue = utils.toFloatfHex('#03A9F4')
 
 			# canvas background colour
 		
@@ -265,7 +262,7 @@ class ColourScheme:
 			self.highlight = self.background
 			
 			# colour of rings and links when you hover over them
-			self.highlight2 = g.toFloatfHex('#607D8B')
+			self.highlight2 = utils.toFloatfHex('#607D8B')
 
 			self.ringWidthMult = 1.0
 
