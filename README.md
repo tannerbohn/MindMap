@@ -1,4 +1,7 @@
+![sample](https://github.com/tannerbohn/MindMap/blob/master/screenshot.png)
+
 # MindMap
+
 Mind mapping program written in Python3 with Tkinter... Because who doesn't love mind maps?
 
 Currently only designed to work with Linux-based systems.
