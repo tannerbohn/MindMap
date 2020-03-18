@@ -1,20 +1,11 @@
 # MindMap
-Mind mapping program written in Python with Tkinter
+Mind mapping program written in Python3 with Tkinter... Because who doesn't love mind maps?
 
-Getting Python 3 Compatibile. Still gotta resolve some os issues 
+Currently only designed to work with Linux-based systems.
 
-   Because who doesn't love mind maps? 
+The best thing to do to start out is run the wrapper and read the help sheet: `python3 wrapper.py`
 
+If you know what sheet you want to open, you can also run (for example): `python3 mindmap.py Sheets/help.json`
 
-To run program:
-
-    python mindMap.py
-
-To run wrapper:
-
-    python wrapper.py
-
-The best thing to do once everything runs is run wrapper and open the help sheet.
-
-To create your own sheet, run wrapper and click the '+' tile. A file will be created when you save.
+To create your own sheet, run wrapper and click the '+' tile. Then type in the name of the new sheet. A file will be created when you save that sheet (Ctrl-s).
 
